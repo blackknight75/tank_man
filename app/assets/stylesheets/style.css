@@ -1,0 +1,22 @@
+body {
+  background-color: #2B292E;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+nav {
+  background-color: #0072BC;
+}
+
+.page-footer {
+  background-color:#0072BC;
+}
+
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
+    color: #0072BC;
+}
