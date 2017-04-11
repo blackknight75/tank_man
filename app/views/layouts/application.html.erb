@@ -7,7 +7,6 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
   </head>
   <nav>
     <div class="nav-wrapper">
@@ -17,7 +16,7 @@
         <li><a href=<%= stores_path %>>Stores</a></li>
         <li><a href="sass.html">Profile</a></li>
         <li><a href="badges.html">Community</a></li>
-        <li><a href="collapsible.html">Login</a></li>
+        <li> <%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in" %> </li>
         <li><a href="mobile.html">Logout</a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
