@@ -17,7 +17,6 @@ class Store
     # @open_now        = store_status(params[:opening_hours][:open_now])
     @lat             = params[:geometry][:location][:lat]
     @lng             = params[:geometry][:location][:lng]
-    @map             = store_map(@lat, @lng)
     @google_rating   = params[:rating]
     @google_embed_key = ENV['google_embed_key']
     # @operating_hours = params[:opening_hours][:weekday_text]
@@ -33,9 +32,5 @@ class Store
   def store_status(open_now)
     return "Open"   if open_now == true
     return "Closed" if open_now == false
-  end
-
-  def store_map(lat, lng)
-    GoogleServices.new.find_store_map(lat, lng)
   end
 end
