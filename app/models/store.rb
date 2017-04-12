@@ -20,6 +20,7 @@ class Store
     @google_rating   = params[:rating]
     @google_embed_key = ENV['google_embed_key']
     @operating_hours = store_hours(params[:opening_hours])
+    @yelp_rating = yelp_rating(@store_details[:international_phone_number])
   end
 
   def self.near_by_stores
@@ -29,6 +30,10 @@ class Store
     end
   end
 
+  def yelp_rating(phone)
+    rating = YelpServices.new.data(phone)
+    end
+
   def store_status(open_now)
     return "Open"   if open_now == true
     return "Closed" if open_now == false
@@ -37,4 +42,5 @@ class Store
   def store_hours(params)
     params[:weekday_text] unless params.nil? || params[:weekday_text] == []
   end
+
 end
