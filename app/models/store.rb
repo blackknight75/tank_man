@@ -20,7 +20,7 @@ class Store
     @google_rating   = params[:rating]
     @google_embed_key = ENV['google_embed_key']
     @operating_hours = store_hours(params[:opening_hours])
-    @yelp_rating = yelp_rating(@store_details[:international_phone_number])
+    @yelp_rating = yelp_rating(@phone)
   end
 
   def self.near_by_stores
