@@ -43,7 +43,6 @@ group :development, :test do
   gem 'pry'
   gem 'launchy'
   gem 'rspec-rails', '~> 3.5'
-  gem 'capybara'
 end
 
 group :development do
@@ -52,5 +51,10 @@ group :development do
   gem 'listen', '~> 3.0.5'
 end
 
+group :test do
+  gem 'vcr'
+  gem 'capybara'
+  gem 'webmock'
+end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

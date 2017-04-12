@@ -1,0 +1,491 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=<google_key>&keyword=fish&location=39.615210,-104.758469&radius=16093.4&type=pet_store
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.11.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Wed, 12 Apr 2017 23:08:00 GMT
+      Expires:
+      - Wed, 12 Apr 2017 23:13:00 GMT
+      Cache-Control:
+      - public, max-age=300
+      Vary:
+      - Accept-Language
+      Server:
+      - pablo
+      Content-Length:
+      - '5845'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="37,36,35"
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+           "html_attributions" : [],
+           "results" : [
+              {
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 39.6771741,
+                       "lng" : -104.9020887
+                    },
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 39.67814673029149,
+                          "lng" : -104.9013189697085
+                       },
+                       "southwest" : {
+                          "lat" : 39.6754487697085,
+                          "lng" : -104.9040169302915
+                       }
+                    }
+                 },
+                 "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/shopping-71.png",
+                 "id" : "82a48955753ad56d1495b7e161c3f32e4446de5e",
+                 "name" : "Aquatic Dog",
+                 "opening_hours" : {
+                    "open_now" : true,
+                    "weekday_text" : []
+                 },
+                 "photos" : [
+                    {
+                       "height" : 1208,
+                       "html_attributions" : [
+                          "\u003ca href=\"https://maps.google.com/maps/contrib/110251113494790287402/photos\"\u003ePaul Pigon\u003c/a\u003e"
+                       ],
+                       "photo_reference" : "CoQBdwAAADD4KB_X5JB7nV1oWbRWNHj0BWlCcDdtE1YhW5IqQj6MmpCaTmkpiOVEMHG36OSPAT1vBEyFSJKETOKAJitFCuc2LS9nHkY_aI69vk0QmfcRqppo0MJfscOqu1-zkFN9TQwvxSaFypCws05EZOhVraTt1qyNp4K27_4SN1A2R0Z_EhDJGWgaLR6dB43hqiUGaZprGhTWLCdZr_uWQe4BzOdTJxjvcw9lXA",
+                       "width" : 1440
+                    }
+                 ],
+                 "place_id" : "ChIJhYL3eYV9bIcR5gQM9pwB3UY",
+                 "rating" : 4.5,
+                 "reference" : "CmRRAAAAKog3eXcgezIKW0EWlf1P55UbaE6Yl7wrZSYuz8RYNWSxCtYrGMcXyNSaWfdRzZ79Gx1Xo6zfgfgj6Orzr4vaxEk3kW38o0gLkjpoNFiBPCh1MxA4CgcyTlquvzBChVSREhDhIZRuoP_BcpxzZSh144OUGhQGFj1l9TZGYgwfSm7NJDGFeHkWOQ",
+                 "scope" : "GOOGLE",
+                 "types" : [ "pet_store", "store", "point_of_interest", "establishment" ],
+                 "vicinity" : "7429 East Iliff Avenue, Denver"
+              },
+              {
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 39.6535427,
+                       "lng" : -104.8708011
+                    },
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 39.6546678802915,
+                          "lng" : -104.8694517697085
+                       },
+                       "southwest" : {
+                          "lat" : 39.6519699197085,
+                          "lng" : -104.8721497302915
+                       }
+                    }
+                 },
+                 "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/shopping-71.png",
+                 "id" : "f5c871b007cc6569aaf6ffb6077d9b23722ad31f",
+                 "name" : "Todd's Tropical Fish",
+                 "opening_hours" : {
+                    "open_now" : true,
+                    "weekday_text" : []
+                 },
+                 "photos" : [
+                    {
+                       "height" : 2048,
+                       "html_attributions" : [
+                          "\u003ca href=\"https://maps.google.com/maps/contrib/103195562487932012266/photos\"\u003eMatthew Minogue\u003c/a\u003e"
+                       ],
+                       "photo_reference" : "CoQBdwAAAPWGy7-bH83hxpkZwhEQ1rdzPjb80XXYxDLHRUnjcGolmi01bCgJk7sPexa0qjoffagMGvd3WqBWZctC9hBxI8BzbOIm4QkPgR-lTOSNvr3xVPqgO_rPi_bVQQPKBIG39r_XgsURTGTvq1T3bIogO4mHuXXKfT7XSMlNKsIxP-b1EhAnpXC9AUCeuwRLOLPbkom4GhS9vZmessueuLraF-9C6S4uIAF6GQ",
+                       "width" : 1152
+                    }
+                 ],
+                 "place_id" : "ChIJLR3Rc5WHbIcRsSi7jbGCC0c",
+                 "rating" : 3.3,
+                 "reference" : "CmRRAAAAMuhE9j4mALj-jwjybcQXCqdBEpKeQ5eEBzcwrF0xlqb0x5msyVVu2WDeLvRPow10Do4KzVeZ-dJVl3YgIWRmkvve6ctSKNA7qakcFzVy4N7pHvLIJ5ul2kUxmh-dEu-mEhAuSybG2gifs0IyezZ7uAwrGhTnb0QURZAVWUdAt5SDr3RaDZs8yg",
+                 "scope" : "GOOGLE",
+                 "types" : [ "pet_store", "store", "point_of_interest", "establishment" ],
+                 "vicinity" : "10015 East Hampden Avenue A, Denver"
+              },
+              {
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 39.532335,
+                       "lng" : -104.770873
+                    },
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 39.53353158029149,
+                          "lng" : -104.7695087697085
+                       },
+                       "southwest" : {
+                          "lat" : 39.5308336197085,
+                          "lng" : -104.7722067302915
+                       }
+                    }
+                 },
+                 "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/shopping-71.png",
+                 "id" : "271da2530ca6440cf39c79052212e10499d30363",
+                 "name" : "Tropical Pet Oasis",
+                 "opening_hours" : {
+                    "open_now" : false,
+                    "weekday_text" : []
+                 },
+                 "photos" : [
+                    {
+                       "height" : 1024,
+                       "html_attributions" : [
+                          "\u003ca href=\"https://maps.google.com/maps/contrib/101940550567580037237/photos\"\u003eTropical Pet Oasis\u003c/a\u003e"
+                       ],
+                       "photo_reference" : "CoQBdwAAALrvIustaG7_VjkuYIFKTb8f9uXXbmnx40abTeSMtABpP-KP-2hTwUfC7bhtCcGt-lzs0_5YhfcpzSFD8kD7SBgA7YdnyHDc-qelsqh15eJpfIAhVl9JiQ3CixkIlfyYNr8dsp83wzjUWH7CjnefxAu_I37i9lBiEPm5BeyT-TIPEhAE4cEN5h_mXzbNC-AwpTtpGhSQBVNRIas7KFVP-mnEOYaK6qC9TA",
+                       "width" : 768
+                    }
+                 ],
+                 "place_id" : "ChIJA5Nj7R6ObIcRpRnBZ838L-k",
+                 "rating" : 4.6,
+                 "reference" : "CmRSAAAAukuxdNkC6arcgHFT6UmNqlNALfolLNKWpjttjtjtDWqhUywjuk7TE0LhCtE8MJwEFqFm6KQGFuSWHf5F2Tu2dCJLMu8FJRKmWuGM9R1I2iZcZdrnl4Q-8sblxRgc-zdEEhC_SIqT0WfSDhU_9BivHZ32GhQXsjtWAuXyWwx9yJC1Q92U_rS9bA",
+                 "scope" : "GOOGLE",
+                 "types" : [
+                    "aquarium",
+                    "pet_store",
+                    "store",
+                    "point_of_interest",
+                    "establishment"
+                 ],
+                 "vicinity" : "10218 Progress Lane, Parker"
+              },
+              {
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 39.677731,
+                       "lng" : -104.896703
+                    },
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 39.6789153802915,
+                          "lng" : -104.8954686697085
+                       },
+                       "southwest" : {
+                          "lat" : 39.6762174197085,
+                          "lng" : -104.8981666302915
+                       }
+                    }
+                 },
+                 "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/shopping-71.png",
+                 "id" : "d728e15a24abe8aee7a6b4ef13016fd1e4e21b66",
+                 "name" : "Ambrosio Aquatic's BY APPOINTMENT ONLY",
+                 "opening_hours" : {
+                    "open_now" : true,
+                    "weekday_text" : []
+                 },
+                 "photos" : [
+                    {
+                       "height" : 3024,
+                       "html_attributions" : [
+                          "\u003ca href=\"https://maps.google.com/maps/contrib/102270503054113488938/photos\"\u003eAmbrosio Aquatic&#39;s BY APPOINTMENT ONLY\u003c/a\u003e"
+                       ],
+                       "photo_reference" : "CoQBdwAAAK3lm5xeBSI6L3S11AZUa7iFMryV3mjrDV7eGm0DW-8R_Ds3n-4PpMrirmNBI9t8ztxOk6RjeBNCDXNxF8inw5U8oJz2dVuQyJlTNsEyItaIY825lI6rGc2R8pqzmIcyywkO7X7_3gYorc99VEEFANauYcA8Q697Ecj0IFfGqTcaEhB6oOkVNX_KzI3MPWF6fqbWGhR5OcxvnCDZDpR5zZuMDiWi2DuOKQ",
+                       "width" : 4032
+                    }
+                 ],
+                 "place_id" : "ChIJBe7xEIlibIcR2zskJs3Wa0w",
+                 "rating" : 4.3,
+                 "reference" : "CmRRAAAATroCAizjcwsEQVTmqqudcefKiatuR7gUtkf9Yo_jUI_FXrYZJHPkxxOgyOEhckaOJozJDjlEkL2iROQWRxR3CwDea6UY0c2MbIq0Iv457xxBGKpHJxHLrmqN12gW5hleEhBD0cL5F4ngnF9wYEWmU9fXGhSJA110gh5jUIO5hw-JyYtR_ywiqQ",
+                 "scope" : "GOOGLE",
+                 "types" : [ "pet_store", "store", "point_of_interest", "establishment" ],
+                 "vicinity" : "2171 South Trenton Way #220, Denver"
+              },
+              {
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 39.661131,
+                       "lng" : -104.875341
+                    },
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 39.6624799802915,
+                          "lng" : -104.8739920197085
+                       },
+                       "southwest" : {
+                          "lat" : 39.6597820197085,
+                          "lng" : -104.8766899802915
+                       }
+                    }
+                 },
+                 "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/shopping-71.png",
+                 "id" : "2fed7a8bcfd9fb779807c397b8cabc726c6024a9",
+                 "name" : "All Seas Aquarium Service",
+                 "place_id" : "ChIJ-_Dv8ZGHbIcRa6y-wi2An8c",
+                 "reference" : "CmRSAAAAgOdUzCTfs_eL9IvuBM93TSRGAcgliK5j2Xz3O5esKAVG2Yo_tzgQfoQ5AR-K6zMTLijb9h-mtig50AuPQoeYX5grA6HGtDK1LMFFF08u-suz-ujdnCJRrQO9jyh4i11NEhBXFVThlbX-hfDBjxVyJZ0bGhTMOz9iWgYvg3q_WUHnruGpycjzGA",
+                 "scope" : "GOOGLE",
+                 "types" : [ "pet_store", "store", "point_of_interest", "establishment" ],
+                 "vicinity" : "10 South Havana Street #112, Aurora"
+              },
+              {
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 39.675769,
+                       "lng" : -104.939579
+                    },
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 39.6771176802915,
+                          "lng" : -104.9382075197085
+                       },
+                       "southwest" : {
+                          "lat" : 39.6744197197085,
+                          "lng" : -104.9409054802915
+                       }
+                    }
+                 },
+                 "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/shopping-71.png",
+                 "id" : "3a1153f187b5f30b66999ac0394573ff6617e013",
+                 "name" : "TNT Aquatics & Exotics LLC open by appointment only",
+                 "photos" : [
+                    {
+                       "height" : 3264,
+                       "html_attributions" : [
+                          "\u003ca href=\"https://maps.google.com/maps/contrib/104256132162533814900/photos\"\u003eTNT Aquatics &amp; Exotics LLC open by appointment only\u003c/a\u003e"
+                       ],
+                       "photo_reference" : "CoQBdwAAAMga8DPsqFbJLOS165cc5TWDcGEvahCylPZQgOL0CM_XFORaFvz5lpsvKWUVObRLpPuOc7CS8Ep5zJDFu-h7mZ7zhk0I7RTIHz7essAzX1rtuWVM0EJ1BR_G6lfhmZzzFqoqs-GyVJahVAZzJYy7sZguIQ_uCQveocvjzaFtLY31EhCMrbSnO9IbpuR0Uierj25bGhTMe-ip0K4LV4XkTUj7KLegLxyILw",
+                       "width" : 2448
+                    }
+                 ],
+                 "place_id" : "ChIJm7flLwh-bIcREG6QfXmzNHE",
+                 "reference" : "CmRRAAAAkX3SMBHRgc_oqeuzVVxAAX5JK2V18wWnQ0ThNcsb78k9VSVUxoLTtQpha02yiu2lRR0SAK-r4vhZSRNMMRPybpPW-E2llNHhJiJd9T52GHKu94HqX1xSLTBY7qoVJyp_EhBcuajJVdtrQvcLqlGmGwMoGhQTAnHr411zKsGqYdfmSW7vFAS2lQ",
+                 "scope" : "GOOGLE",
+                 "types" : [ "pet_store", "store", "point_of_interest", "establishment" ],
+                 "vicinity" : "2246 South Albion Street, Denver"
+              },
+              {
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 39.6795427,
+                       "lng" : -104.8985989
+                    },
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 39.6810601802915,
+                          "lng" : -104.8967116697085
+                       },
+                       "southwest" : {
+                          "lat" : 39.6783622197085,
+                          "lng" : -104.8994096302915
+                       }
+                    }
+                 },
+                 "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/shopping-71.png",
+                 "id" : "b7b7b6eb46fc36b5aa11526a9e3d7ab960142969",
+                 "name" : "Oceans Apart Inc",
+                 "opening_hours" : {
+                    "open_now" : false,
+                    "weekday_text" : []
+                 },
+                 "photos" : [
+                    {
+                       "height" : 960,
+                       "html_attributions" : [
+                          "\u003ca href=\"https://maps.google.com/maps/contrib/107764943866866053117/photos\"\u003eSean O&#39;Hara\u003c/a\u003e"
+                       ],
+                       "photo_reference" : "CoQBdwAAADMXwcdZ63p4etCJt7WCQAaOLf1a271EiOdgNczKyXuvf-ZGb7gB70acKlR-odD5ohmUOlIV-EUEEYwXrYBQ06a-0DLbI7fY_LExsFk1HlhKW4pB6ls_x5Mu40VdItg96EsWCYw9uEwRfXIiCi383pNETECxu0grmiZAgRYC-1j5EhCUmXW3gxlrpuHP517jbqjzGhSTrJMqEnjVuT5LKTeoU4GcKoKdUw",
+                       "width" : 1280
+                    }
+                 ],
+                 "place_id" : "ChIJ4WrzNJt9bIcRAnmMUIb33YA",
+                 "rating" : 5,
+                 "reference" : "CmRSAAAAby-jmTw7opQa5BmwPg4yMeFJKYAbbeQXS1q02qM2r1fJ9-OuEd9o1CxxS99x96oq-KKo92Wpt8LhhSgYLr4mPlWY8H1NP0x152iqLDhoJPmxxBZDYoJhFSRylVggHD0zEhAUYCUtEQjDKVsQvuzGJeLAGhTZxTCprUDTLYqfwdnl_4nUBfg_Bg",
+                 "scope" : "GOOGLE",
+                 "types" : [ "pet_store", "store", "point_of_interest", "establishment" ],
+                 "vicinity" : "7808 Cherry Creek South Drive #201, Denver"
+              },
+              {
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 39.5349707,
+                       "lng" : -104.7902915
+                    },
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 39.5359847802915,
+                          "lng" : -104.7888649197085
+                       },
+                       "southwest" : {
+                          "lat" : 39.5332868197085,
+                          "lng" : -104.7915628802915
+                       }
+                    }
+                 },
+                 "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/shopping-71.png",
+                 "id" : "64992d71be5b4a7983afa8f113093078f4aafba1",
+                 "name" : "US Aquarium Leasing",
+                 "photos" : [
+                    {
+                       "height" : 383,
+                       "html_attributions" : [
+                          "\u003ca href=\"https://maps.google.com/maps/contrib/109699617247462908276/photos\"\u003eUS Aquarium Leasing\u003c/a\u003e"
+                       ],
+                       "photo_reference" : "CoQBdwAAAEXHnO83HgOo5oUiGSBmFmdXIb2dbLpcAzuNnyZHZ_mO1jh72MhMveMJAJW1Sil_WsTrS_bNMLqmt-hKsgefJ_sfkrlg8mNEuGDnBL7W-vLyx3C3-b-03VB5O5u5yIDU5NB8awhQuKxrFa_e1HHyvROjbWHaH727MwhVoaYMZRuMEhDrEhBhMqm5C0PLea5ygjeZGhSHJag3G3r2mvYqxir__xPZw1QfZA",
+                       "width" : 576
+                    }
+                 ],
+                 "place_id" : "ChIJ62RcdDGObIcRpt8idKBWDW0",
+                 "rating" : 5,
+                 "reference" : "CmRRAAAALJkWuaddlXCq_n2IIWa7yQXTsQKswYqt6f69FUD69PfvlrRZpX5c5K5aplD2t7Rck9qZS4Asj91dHon4rSn4yYW1GCVzvb6hokcxighyFYgkJnVsSx4nmPR-sxMOzaAUEhCxXMMhusTqe9-ODZ22eXqSGhSrsC9JG_bMLoEbipe1LkmWybz8Tg",
+                 "scope" : "GOOGLE",
+                 "types" : [
+                    "pet_store",
+                    "natural_feature",
+                    "store",
+                    "point_of_interest",
+                    "establishment"
+                 ],
+                 "vicinity" : "17011 Lincoln Avenue #426, Parker"
+              },
+              {
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 39.65479069999999,
+                       "lng" : -104.7691648
+                    },
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 39.6562408802915,
+                          "lng" : -104.7678146697085
+                       },
+                       "southwest" : {
+                          "lat" : 39.6535429197085,
+                          "lng" : -104.7705126302915
+                       }
+                    }
+                 },
+                 "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/shopping-71.png",
+                 "id" : "b56d9fede226c263cc4fde79308b0248697bda7d",
+                 "name" : "Aquatic Kingdom Aquariums",
+                 "opening_hours" : {
+                    "open_now" : true,
+                    "weekday_text" : []
+                 },
+                 "photos" : [
+                    {
+                       "height" : 2988,
+                       "html_attributions" : [
+                          "\u003ca href=\"https://maps.google.com/maps/contrib/106246034274149393223/photos\"\u003eAquatic Kingdom\u003c/a\u003e"
+                       ],
+                       "photo_reference" : "CoQBdwAAAFsVaLfiUSelgbeI5vgWV6pbub9VEvJ60-ZiLj5zP4ZtqkXRsRr50YF62455-HWKIm5zC1lCzpPcjYuQfhEA0klDe0_Nk6DzTxq8lyxx-uqJDXsWK0LJaUT7cjqYkYw2ljLlnQMOZp8EwYfjsztB4RwiaWGIT6d9dJp-BtwpFmRFEhDlt1NsMeP9lOG9rJ10VfABGhR9ulZ3YElhk3Y0peQsnjI2SE7xbQ",
+                       "width" : 5312
+                    }
+                 ],
+                 "place_id" : "ChIJpeSVG5qJbIcR2G6r9-vToE0",
+                 "rating" : 4.1,
+                 "reference" : "CmRRAAAAhDpEFnf_tu9VIxgPNqDnxy0CoPKjjVhai4q1unmySmrFd4_h4HixFHgtUiQiVLM9tvX3fF4ovh-NwKNirekQjK5zcP_wbw5n4eal5ucozmAMsmu0tfKztM9z-PM3iSk8EhDHQf7qTjY58wnnNu1LQpisGhRX9bcwPJJXOXxe7zmFSCATn7f2eA",
+                 "scope" : "GOOGLE",
+                 "types" : [ "pet_store", "store", "point_of_interest", "establishment" ],
+                 "vicinity" : "18757 East Hampden Avenue #160, Aurora"
+              },
+              {
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 39.5580227,
+                       "lng" : -104.7804121
+                    },
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 39.55948278029149,
+                          "lng" : -104.7791313697085
+                       },
+                       "southwest" : {
+                          "lat" : 39.5567848197085,
+                          "lng" : -104.7818293302915
+                       }
+                    }
+                 },
+                 "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/shopping-71.png",
+                 "id" : "0718327b8c24eacab1bc057aef712241fcda8ebc",
+                 "name" : "Essential Pet",
+                 "opening_hours" : {
+                    "open_now" : true,
+                    "weekday_text" : []
+                 },
+                 "photos" : [
+                    {
+                       "height" : 2058,
+                       "html_attributions" : [
+                          "\u003ca href=\"https://maps.google.com/maps/contrib/117098989452774939388/photos\"\u003eEssential Pet\u003c/a\u003e"
+                       ],
+                       "photo_reference" : "CoQBdwAAAF5JT17NCmuYVFuhp8e0dSGLAcowzDX-qrzsFrNo-M4oP7YFoSMUgKJc19xZ__FvNIuGqfzQJKT4Dz2QRaepF6o9OSpbeR47xcDfba6Z7_8p4wENw9qpQmKNfJJW-V-bEadchH5DYQRJZmVTkIUveU5uFIdtrmkQJkoj1F6dfTjJEhD34HQOVsTVmeDOtG8mSNmDGhRpQ6Tx7zFC70nIqvhphApVKVVXuA",
+                       "width" : 3324
+                    }
+                 ],
+                 "place_id" : "ChIJMXUwAFyObIcRO6ZKkcpI32Y",
+                 "rating" : 3.8,
+                 "reference" : "CmRRAAAAh94Shyk6hndlEYct0SDdZPh2_jSl4Apfu_qQPfo1M17jOU8Zvsc1ytTkflKqzXRG8RR1AkBZiP4tgoDVjRs0i6vQUsyGOXiEAQ6AyZ6QHau-pndXAUQQ-gzb1HBAzcn4EhCZxTpSLYMYp1YiVLcTg1wVGhRYEHrWUX9rvyvUdoZUfndi5Bux6w",
+                 "scope" : "GOOGLE",
+                 "types" : [ "pet_store", "store", "point_of_interest", "establishment" ],
+                 "vicinity" : "17920 Cottonwood Drive, Parker"
+              },
+              {
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 39.55692619999999,
+                       "lng" : -104.7816445
+                    },
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 39.55865798029149,
+                          "lng" : -104.7805171197085
+                       },
+                       "southwest" : {
+                          "lat" : 39.5559600197085,
+                          "lng" : -104.7832150802915
+                       }
+                    }
+                 },
+                 "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/shopping-71.png",
+                 "id" : "80b912ea4279030c3ced403913176484f06fc81a",
+                 "name" : "Parker Exotic Pets",
+                 "opening_hours" : {
+                    "open_now" : true,
+                    "weekday_text" : []
+                 },
+                 "photos" : [
+                    {
+                       "height" : 3024,
+                       "html_attributions" : [
+                          "\u003ca href=\"https://maps.google.com/maps/contrib/114702847869878861880/photos\"\u003eJed Baker\u003c/a\u003e"
+                       ],
+                       "photo_reference" : "CoQBdwAAAAZXYhyAAq5hxqDzviquQCkt-4O4vaF7J72JWviNGcUeO3q0VjbpIWUXSkfSbFOVIBNusQPUzZEdVjtCYtGVw105DNBe1lN_o5pn_pV5Tg5LeVrRdXSbZ6HPBQ4NX_WtugvxT0DdpCDbLlRc3bWzeVWTv6MEzR40xhpmABllmydkEhBHYFr-C9Jok0Qa60BmQxbpGhR8m1rn9_SqAYNM-HBtp-dPkRohTw",
+                       "width" : 4032
+                    }
+                 ],
+                 "place_id" : "ChIJGRofWuWRbIcR0OQApmvpG6k",
+                 "rating" : 4.2,
+                 "reference" : "CmRSAAAAccHARubZICgqU1Mc4VB1lgFpL1J9pv6NxVoa63h9VXb-yY5f8HrHSGQbP0mFvH66VRjxWTMlTtP6NnfLanqmKWG2TfZ40sDy0sN1TcyPAEJC_DHUeIlH_7baSnEeELSsEhDGT3hcE9enMPHf87TeoXecGhTvrnureutaUz1kGkYaiw91Hpwxtw",
+                 "scope" : "GOOGLE",
+                 "types" : [ "pet_store", "store", "point_of_interest", "establishment" ],
+                 "vicinity" : "17880 Cottonwood Drive, Parker"
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Wed, 12 Apr 2017 23:08:00 GMT
+recorded_with: VCR 3.0.3
