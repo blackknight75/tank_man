@@ -6,8 +6,7 @@ describe 'when a guest visits store index' do
     visit stores_path
 
     within all('#store-info')[0] do
-      expect(page).to have_content("Aquatic Dog")
+      expect(page).to have_content("Address: 7429 East Iliff Avenue")
     end
-
   end
 end
