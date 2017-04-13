@@ -1,5 +1,5 @@
 body {
-  background-color: #2B292E;
+  background-color: #607d8b;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
@@ -18,5 +18,9 @@ nav {
 }
 
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
-    color: #0072BC;
+  color: #0072BC;
+}
+
+html {
+  font-family: 'Righteous', cursive;
 }
