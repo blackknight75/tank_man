@@ -13,8 +13,10 @@
            </iframe>
          </div>
          <div class="card-content">
-          <span class="activator grey-text text-darken-4"><p><%= truncate(store.name, length: 30) %></p class="strong"><i class="material-icons right">more_vert</i></span>
-          <div id="store-details" class="grey-text">
+          <div id="store-title">
+            <span class="activator grey-text text-darken-4"><p><%= truncate(store.name, length: 30) %></p class="strong"><i class="material-icons right">more_vert</i></span>
+          </div>
+          <div id="store-info" class="grey-text">
              <p><%= store.address %></p>
              <p>Status: <%= store.open_now %></p>
              <p><%= store.display_phone %></p>
