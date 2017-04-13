@@ -12,6 +12,7 @@ VCR.configure do |c|
   c.filter_sensitive_data('<yelp_key>') { ENV['yelp_key'] }
   c.filter_sensitive_data('<google_key>') { ENV['google_key'] }
   c.ignore_localhost = true
+  c.allow_http_connections_when_no_cassette = true
 end
 
 # Add additional requires below this line. Rails is not loaded until this point!
