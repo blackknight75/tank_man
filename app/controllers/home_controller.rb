@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
 
-  def dashboard
-    render :dashboard
+  def show
+    render :show
   end
 end
