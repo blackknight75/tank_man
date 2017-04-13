@@ -9,10 +9,6 @@ describe Store do
         expect(Store.near_by_stores).to be_a(Array)
         expect(Store.near_by_stores.length).to eq(11)
       end
-
-
-
     end
   end
-
 end
