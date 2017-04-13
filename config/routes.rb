@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   resources :stores, only: [:index]
   resources :sessions, only: [:create, :destroy]
 
-  root to: 'home#dashboard'
+  root to: 'home#show'
 end
