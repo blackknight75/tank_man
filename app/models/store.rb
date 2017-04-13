@@ -22,6 +22,7 @@ class Store
     @operating_hours = @store_details[:opening_hours][:weekday_text].join(", \n") unless @store_details[:opening_hours].nil?
     @display_phone   = @store_details[:formatted_phone_number]
     @phone           = @store_details[:international_phone_number].gsub(/[^0-9+]/, "")
+    @yelp_rating     = yelp_rating(@phone)
   end
 
   def self.near_by_stores
@@ -31,6 +32,9 @@ class Store
     end
   end
 
+  def yelp_rating(phone)
+    rating = YelpServices.new.data(phone)
+    end
   def store_details(place_id)
     store_details = GoogleServices.new.store_details(place_id)
   end
@@ -43,4 +47,5 @@ class Store
   def store_hours(params)
     params[:weekday_text] unless params.nil? || params[:weekday_text] == []
   end
+
 end
