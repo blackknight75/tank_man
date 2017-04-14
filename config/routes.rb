@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'auth/failure', to: redirect('/')
   get 'logout', to: 'sessions#destroy', as: 'logout'
 
-  resources :stores, only: [:index]
+  resources :stores, only: [:index, :show]
   resources :sessions, only: [:create, :destroy]
 
   root to: 'home#show'

@@ -10,7 +10,6 @@ class Store
               :display_phone,
               :yelp_rating
 
-
   def initialize(params)
     @place_id        = params[:place_id]
     @name            = params[:name]
@@ -36,9 +35,15 @@ class Store
 
   def get_yelp_rating(phone)
     rating = YelpServices.new.data(phone)
-    end
+  end
+
   def store_details(place_id)
     store_details = GoogleServices.new.store_details(place_id)
+  end
+
+  def self.store_details(place_id)
+    store_details = GoogleServices.new.store_details(place_id)
+    Store.new(store_details)
   end
 
   def store_status(open_now)
