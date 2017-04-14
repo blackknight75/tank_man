@@ -7,7 +7,9 @@ class Store
               :google_embed_key,
               :place_id,
               :operating_hours,
-              :display_phone
+              :display_phone,
+              :yelp_rating
+
 
   def initialize(params)
     @place_id        = params[:place_id]
