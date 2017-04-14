@@ -14,7 +14,7 @@
          </div>
          <div class="card-content">
           <div id="store-title">
-            <span class="activator grey-text text-darken-4"><p><%= truncate(store.name, length: 30) %></p class="strong"><i class="material-icons right">more_vert</i></span>
+            <span class="activator grey-text text-darken-4"><p><%= link_to truncate(store.name, length: 30), "/stores/#{store.place_id}" %></p><i class="material-icons right">more_vert</i></span>
           </div>
           <div id="store-info" class="grey-text">
              <p><%= store.address %></p>
