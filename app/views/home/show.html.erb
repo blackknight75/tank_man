@@ -1,1 +1,20 @@
-<h1 class="white-text">HOME</h1>
+<div class="row">
+  <div class="col s4">
+    <h1 class="white-text">HOME</h1>
+  </div>
+  <div class="col s4">
+    <!-- Promo Content 2 goes here -->
+  </div>
+  <div class="col s4 grey darken-3 card">
+    <h5 class='white-text'>Seach Stores By Zipcode</h5>
+    <form action='/near_by_stores' method='get'>
+      <div class="input-field card">
+        <input id="search" type="search" name="zipcode" placeholder="Enter Zipcode" required>
+        <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+        <i class="material-icons">close</i>
+      </div>
+        <input id="submit" type="submit" class="btn btn-small orange-text  grey darken-3 z-depth-4">
+        <br><br>
+    </form>
+  </div>
+</div>

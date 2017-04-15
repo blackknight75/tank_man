@@ -6,7 +6,7 @@ describe 'when a user is logged in' do
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
     visit root_path
-    within('#navbar') do
+    within('#dropdown1') do
       expect(page).to have_content('Logout')
       expect(page).to_not have_button('Sign in with Google')
     end

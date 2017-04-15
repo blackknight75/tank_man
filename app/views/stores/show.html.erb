@@ -1,0 +1,33 @@
+<h1 class='white-text'><%= @store.name %></h1>
+<div class="row">
+  <div class="col s12 m6 z-depth-2">
+    <iframe class="left"
+      width="460"
+      height="450"
+      frameborder="0" style="border:0"
+      src="https://www.google.com/maps/embed/v1/place?key=<%= @store.google_embed_key  %>&q=place_id:<%= @store.place_id  %>">
+    </iframe>
+  </div>
+  <div class="col s12 m1"></div>
+  <div class="col s12 m5">
+    <div class="card white z-depth-4">
+      <div class="card-content black-text">
+        <span class="card-title"><%= @store.street %></span>
+        <p><%= @store.city %>, <%= @store.state %> <%= @store.zipcode %></p>
+        <% if @store.open_now == "Open" %>
+          <p class="green-text">Status: <%= @store.open_now %></p>
+        <% else %>
+          <p class="red-text">Status: <%= @store.open_now %></p>
+        <% end %>
+        <br>
+        <p class="grey-text"><%= @store.display_phone %></p>
+        <p class="grey-text">Yelp Score: <%= @store.yelp_rating %></p>
+        <p class="grey-text">Google Score: <%= @store.google_rating %></p>
+      </div>
+      <div class="card-action">
+        <a href="#">This is a link</a>
+        <a href="#">This is a link</a>
+      </div>
+    </div>
+  </div>
+</div>
