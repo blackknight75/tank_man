@@ -7,5 +7,6 @@ class StoresController < ApplicationController
 
   def show
     @store = Store.store_details(params[:id])
+    
   end
 end
