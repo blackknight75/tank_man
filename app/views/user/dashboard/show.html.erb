@@ -1,0 +1,43 @@
+<h1>Welcome <%= current_user.name %></h1>
+</div>
+<div class="row">
+  <% @tanks.each do |tank| %>
+    <div class="col s12 m4">
+      <div class="card large">
+         <div class="card-image waves-effect z-depth-3 waves-block waves-light">
+
+         </div>
+         <div class="card-content">
+          <div id="store-title">
+            <span class="activator grey-text text-darken-4"><p><%= tank.name %><br></p class="strong"><i class="material-icons right">more_vert</i></span>
+          </div>
+          <div id="store-info" class="grey-text">
+             <p><%= tank.size %> Gallons</p>
+             <p>Tank Type: <%= tank.style %></p>
+             <p><%= tank.description %></p>
+           </div>
+         </div>
+         <div class="card-action">
+            <a href="#">link</a>
+            <a>Tank Man Rating: </a>
+          </div>
+         <div class="card-reveal">
+           <span class="card-title grey-text text-darken-4">Review<i class="material-icons right">close</i></span>
+          <button class="btn btn-primary">Word</button>
+          <br><br>
+           <p>
+             Photos?
+           </p>
+           <p>
+             Well, the way they make shows is, they make one show. That
+             show's called a pilot. Then they show that show to the people
+             who make shows, and on the strength of that one show they decide
+             if they're going to make more shows. Some pilots get picked and
+             become television programs. Some don't, become nothing. She
+             starred in one of the ones that became nothing.
+           </p>
+         </div>
+       </div>
+    </div>
+   <% end %>
+ </div>
