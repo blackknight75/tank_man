@@ -1,5 +1,9 @@
 body {
-  background-color: #607d8b;
+  background: radial-gradient(circle, #0072BC, black);
+  /*background-color: #607d8b;*/
+  /*background-image: url("http://vizts.com/wp-content/uploads/2015/11/aquatics-in-water-in-waikiki-aquarium.jpg");
+  background-size: cover;*/
+
   display: flex;
   min-height: 100vh;
   flex-direction: column;
