@@ -22,19 +22,14 @@
             <a>Tank Man Rating: </a>
           </div>
          <div class="card-reveal">
-           <span class="card-title grey-text text-darken-4">Review<i class="material-icons right">close</i></span>
-          <button class="btn btn-primary">Word</button>
+           <span class="card-title grey-text text-darken-4">Tank Description<i class="material-icons right">close</i></span>
+          <%= button_to "Go to Tank Page", "/user/tank/#{tank.id}", class: "btn btn-primary", method: :get %>
           <br><br>
            <p>
              Photos?
            </p>
            <p>
-             Well, the way they make shows is, they make one show. That
-             show's called a pilot. Then they show that show to the people
-             who make shows, and on the strength of that one show they decide
-             if they're going to make more shows. Some pilots get picked and
-             become television programs. Some don't, become nothing. She
-             starred in one of the ones that became nothing.
+            <%= tank.description %>
            </p>
          </div>
        </div>
