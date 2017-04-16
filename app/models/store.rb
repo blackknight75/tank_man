@@ -32,8 +32,9 @@ class Store
     @zipcode          = @store_details[:formatted_address].split(",")[2][4..8]
   end
 
-  def self.near_by_stores
-    stores = GoogleServices.new.find_near_by_stores
+  def self.near_by_stores(client_ip)
+    user_location = GeoIpServices.new.get_location(client_ip)
+    stores = GoogleServices.new.find_near_by_stores(user_location)
     stores.map do |store|
       Store.new(store)
     end
