@@ -52,6 +52,7 @@ group :development do
 end
 
 group :test do
+  gem 'newrelic_rpm'
   gem 'vcr'
   gem 'capybara'
   gem 'webmock'
