@@ -12,8 +12,17 @@
 
 ActiveRecord::Schema.define(version: 20170414000126) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "reviews", force: :cascade do |t|
+    t.string  "place_id"
+    t.string  "body"
+    t.integer "score"
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id", using: :btree
+  end
 
   create_table "tanks", force: :cascade do |t|
     t.string  "name"
@@ -35,5 +44,6 @@ ActiveRecord::Schema.define(version: 20170414000126) do
     t.string   "image_url"
   end
 
+  add_foreign_key "reviews", "users"
   add_foreign_key "tanks", "users"
 end

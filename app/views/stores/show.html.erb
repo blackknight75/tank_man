@@ -21,8 +21,11 @@
         <% end %>
         <br>
         <p class="grey-text"><%= @store.display_phone %></p>
-        <p class="grey-text">Yelp Score: <%= @store.yelp_rating %></p>
-        <p class="grey-text">Google Score: <%= @store.google_rating %></p>
+        <div class="reviews">
+          <p class="grey-text">Tank Man Score: <%= @store.tank_man_score %></p>
+          <p class="grey-text">Yelp Score: <%= @store.yelp_rating %></p>
+          <p class="grey-text">Google Score: <%= @store.google_rating %></p>
+        </div>
       </div>
       <div class="card-action">
         <a href="#">This is a link</a>

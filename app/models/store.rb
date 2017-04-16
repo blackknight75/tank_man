@@ -67,4 +67,8 @@ class Store
       Store.new(store)
     end
   end
+
+  def tank_man_score
+    Review.where(place_id: @place_id).sum(:score)
+  end
 end
