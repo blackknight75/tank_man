@@ -17,9 +17,13 @@
             <span class="activator grey-text text-darken-4"><p><%= link_to truncate(store.name, length: 30), "/stores/#{store.place_id}" %></p><i class="material-icons right">more_vert</i></span>
           </div>
           <div id="store-info" class="grey-text">
-            <span class="card-title"><%= store.street %></span>
+            <span><%= store.street %></span>
             <p><%= store.city %>, <%= store.state %> <%= store.zipcode %></p>
-             <p>Status: <%= store.open_now %></p>
+            <% if store.open_now == "Open" %>
+               <p class="green-text">Status: <%= store.open_now %></p>
+             <% else %>
+               <p class="red-text">Status: <%= store.open_now %></p>
+             <% end %>
              <p><%= store.display_phone %></p>
            </div>
          </div>

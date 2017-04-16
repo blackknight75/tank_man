@@ -9,7 +9,7 @@ class YelpServices
     end
 
     def format_data(data)
-      if data["businesses"][0].nil?
+      if data.include?("error") || data["businesses"][0].nil?
         return 0
       else
         data["businesses"][0]["rating"]

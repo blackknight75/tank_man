@@ -7,8 +7,8 @@ class GoogleServices
 
   def find_near_by_stores_search(zipcode)
     parsed_zip_code_info = convert_zipcode_to_coordinates(zipcode)
-    lat = parsed_zip_code_info[:lat]
-    lng = parsed_zip_code_info[:lng]
+    lat = parsed_zip_code_info[:places][0][:latitude]
+    lng = parsed_zip_code_info[:places][0][:longitude]
     stores_raw = Faraday.get("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=#{lat},#{lng}&radius=16093.4&type=pet_store&keyword=fish&key=#{ENV['google_key']}")
     JSON.parse(stores_raw.body, symbolize_names: true)[:results]
   end
@@ -19,7 +19,7 @@ class GoogleServices
   end
 
   def convert_zipcode_to_coordinates(zipcode)
-    zipcode_info = Faraday.get("https://www.zipcodeapi.com/rest/#{ENV['zipcode_key']}/info.json/#{zipcode}/degrees")
+    zipcode_info = Faraday.get("http://api.zippopotam.us/us/#{zipcode}")
     JSON.parse(zipcode_info.body, symbolize_names: true)
   end
 end
