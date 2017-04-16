@@ -9,4 +9,12 @@ class ApplicationController < ActionController::Base
   def check_registered_user
     redirect_to root_path unless current_user
   end
+
+  def remote_ip
+    if request.remote_ip == '127.0.0.1' || request.remote_ip == "::1"
+      '162.216.46.154'
+    else
+      request.remote_ip
+    end
+  end
 end

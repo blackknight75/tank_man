@@ -10,8 +10,7 @@ feature "user goes to stores page" do
     VCR.use_cassette("store_index", :record => :new_episodes) do
       visit stores_path
 
-      expect(page).to have_content("Aquatic Dog")
-      expect(page).to have_content("TNT")
+      expect(page).to have_content("Petland Friscomore_vert")
     end
   end
 end

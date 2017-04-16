@@ -24,7 +24,7 @@ class Store
     @google_embed_key = ENV['google_embed_key']
     @operating_hours  = @store_details[:opening_hours][:weekday_text].join(", \n") unless @store_details[:opening_hours].nil?
     @display_phone    = @store_details[:formatted_phone_number]
-    @phone            = @store_details[:international_phone_number].gsub(/[^0-9+]/, "")
+    @phone            = @store_details[:international_phone_number].gsub(/[^0-9+]/, "") unless @store_details[:international_phone_number].nil?
     @yelp_rating      = get_yelp_rating(@phone)
     @street           = @store_details[:formatted_address].split(",")[0]
     @city             = @store_details[:formatted_address].split(",")[1]
@@ -32,8 +32,9 @@ class Store
     @zipcode          = @store_details[:formatted_address].split(",")[2][4..8]
   end
 
-  def self.near_by_stores
-    stores = GoogleServices.new.find_near_by_stores
+  def self.near_by_stores(client_ip)
+    user_location = GeoIpServices.new.get_location(client_ip)
+    stores = GoogleServices.new.find_near_by_stores(user_location)
     stores.map do |store|
       Store.new(store)
     end
