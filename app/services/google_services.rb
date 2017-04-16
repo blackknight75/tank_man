@@ -19,7 +19,7 @@ class GoogleServices
   end
 
   def convert_zipcode_to_coordinates(zipcode)
-    zipcode_info = Faraday.get("https://www.zipcodeapi.com/rest/VtkjiEget7H4Cm3vplUbCrV1w806XLaTfucx9tMCAtHcQKIf6CrJ4nKAvLGtxQmM/info.json/#{zipcode}/degrees")
+    zipcode_info = Faraday.get("https://www.zipcodeapi.com/rest/#{ENV['zipcode_key']}/info.json/#{zipcode}/degrees")
     JSON.parse(zipcode_info.body, symbolize_names: true)
   end
 end
