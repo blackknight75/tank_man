@@ -21,9 +21,22 @@ describe "user can" do
 
     expect(current_path).to eq("/dashboard")
     expect(page).to have_content("scmountain17")
-    expect(page).to have_content("Biggin")
-    expect(page).to have_content("Saltydog")
-    expect(page).to have_content("QT")
-    expect(page).to have_content("scmountain17")
+
+    cards = page.all('.card-content')
+
+    within(cards[0]) do
+      expect(page).to have_content("Biggin")
+      expect(page).to have_content(125)
+    end
+
+    within(cards[1]) do
+      expect(page).to have_content("Saltydog")
+      expect(page).to have_content(55)
+    end
+
+    within(cards[2]) do
+      expect(page).to have_content("QT")
+      expect(page).to have_content(10)
+    end
   end
 end

@@ -23,7 +23,7 @@
           </div>
          <div class="card-reveal">
            <span class="card-title grey-text text-darken-4">Tank Description<i class="material-icons right">close</i></span>
-          <button class="btn btn-primary"> <% tank_path(tank.id) %> Go to Tank Page</button>
+          <%= button_to "Go to Tank Page", "/tank/#{tank.id}", class: "btn btn-primary" %>
           <br><br>
            <p>
              Photos?
