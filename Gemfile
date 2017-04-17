@@ -35,7 +35,6 @@ gem 'httparty'
 
 gem 'yelp', require: 'yelp'
 gem "omniauth-google-oauth2"
-gem "geocode"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
