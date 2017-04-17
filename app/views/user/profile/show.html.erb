@@ -1,0 +1,40 @@
+<div class="welcome white-text">
+</div><h1>Welcome <%= current_user.name %></h1>
+
+</div>
+<div class="row">
+  <% @tanks.each do |tank| %>
+    <div class="col s12 m4">
+      <div class="card large">
+         <div class="card-image waves-effect z-depth-3 waves-block waves-light">
+
+         </div>
+         <div class="card-content">
+          <div id="store-title">
+            <span class="activator grey-text text-darken-4"><p><%= tank.name %><br></p class="strong"><i class="material-icons right">more_vert</i></span>
+          </div>
+          <div id="store-info" class="grey-text">
+             <p><%= tank.size %> Gallons</p>
+             <p>Tank Type: <%= tank.style %></p>
+             <p><%= tank.description %></p>
+           </div>
+         </div>
+         <div class="card-action">
+            <a href="#">link</a>
+            <a>Tank Man Rating: </a>
+          </div>
+         <div class="card-reveal">
+           <span class="card-title grey-text text-darken-4">Tank Description<i class="material-icons right">close</i></span>
+          <%= button_to "Go to Tank Page", "/user/tank/#{tank.id}", class: "btn btn-primary", method: :get %>
+          <br><br>
+           <p>
+             Photos?
+           </p>
+           <p>
+            <%= tank.description %>
+           </p>
+         </div>
+       </div>
+    </div>
+   <% end %>
+ </div>

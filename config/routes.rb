@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'logout', to: 'sessions#destroy', as: 'logout'
   get '/dashboard', to: 'user/dashboard#show'
   get '/near_by_stores', to: 'store_search#index', as: "store_search"
+  get 'user/:id/profile', to: 'user/profile#show', as: "user_profile"
 
   resources :stores, only: [:index, :show]
   resources :sessions, only: [:create, :destroy]
