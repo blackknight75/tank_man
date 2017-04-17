@@ -30,7 +30,6 @@
         </ul>
       </nav>
     </div>
-
     <br>
     <main>
       <div class="container">
@@ -44,7 +43,7 @@
                     <li class="collection-item avatar">
                       <i class="material-icons circle">supervisor_account</i>
                       <span class="title">Users</span>
-                      <p>0 Registered Users<br>
+                      <p><%= link_to @presenter.user_count,"", class: "red-text" %> Registered Users<br>
                         Exchange valuable information with fellow aquarists
                       </p>
                       <a href="#!" class="secondary-content"><i class="material-icons">whatshot</i></a>
@@ -52,7 +51,7 @@
                     <li class="collection-item avatar">
                       <i class="material-icons circle">insert_comment</i>
                       <span class="title">Reviews</span>
-                      <p>0 Local Store Reviews<br>
+                      <p><%= link_to @presenter.review_count,"", class: "red-text" %> Local Store Reviews<br>
                         With reviews you can stay up to date on local stores.<br>
                         Weather it's a sale or a recent ick outbreak, know before you walk in the door.
                       </p>
@@ -61,7 +60,7 @@
                     <li class="collection-item avatar">
                       <i class="material-icons circle">insert_chart</i>
                       <span class="title">Tank Management</span>
-                      <p>Managing over 0 user tanks<br>
+                      <p>Managing over <%= link_to @presenter.tank_count,"", class: "red-text" %> user tanks<br>
                         From water parameters, to setup, to liforms inside. Track it all with Tank Man.
                       </p>
                       <a href="#!" class="secondary-content"><i class="material-icons">whatshot</i></a>
@@ -81,10 +80,7 @@
     </footer>
   <script>
    $(document).ready(function() {
-      $('select').material_select();
       $(".button-collapse").sideNav();
-      $(".dropdown-button").dropdown();
-      $('.slider').slider();
     });
   </script>
 </html>
