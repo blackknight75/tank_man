@@ -15,7 +15,7 @@ describe "user can" do
   it "see other users tanks" do
 
     visit user_profile_path(@current_user)
-    
+
     cards = page.all('.card-content')
 
     within(cards[0]) do
@@ -30,5 +30,19 @@ describe "user can" do
 
       expect(page).to_not have_content("QT")
       expect(page).to_not have_content(10)
+  end
+
+  it "click on tank card, go to tank show" do
+    visit dashboard_path
+
+    cards = page.all('.card-reveal')
+
+    within(cards[0]) do
+      expect(page).to have_content("Description")
+      expect(page).to have_content("overflow")
+      click_button "Go to Tank Page"
+    end
+
+    expect(current_path).to eq"/user/tank/#{@tank.id}"
   end
 end
