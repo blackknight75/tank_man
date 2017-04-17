@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
 
   def show
-    render :show
+    render :layout => false
   end
 end

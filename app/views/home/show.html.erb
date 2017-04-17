@@ -1,21 +1,90 @@
-<div class="row">
-  <div class="col s4">
-    <h1 class="white-text">HOME</h1>
-  </div>
-  <div class="col s4">
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TankMan</title>
+    <%= csrf_meta_tags %>
 
-  </div>
-  <div class="col s4 grey darken-3 card">
-    <h5 class='white-text'>Seach Stores By Zipcode</h5>
-    <form action='/near_by_stores' method='get'>
-      <div class="input-field card">
-        <input id="search" type="search" name="zipcode" placeholder="Enter Zipcode" required>
-        <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-        <i class="material-icons">close</i>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+  </head>
+    <%= render 'background/video' %>
+    <div class="navbar-fixed">
+      <nav>
+        <a href="/" class="brand-logo center">Tank Man</a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul class="right valign-wrapper hide-on-med-and-down" id="nav-right">
+          <li> <%= button_to "Sign in with Google", "/auth/google_oauth2", class: "btn btn-small orange-text  grey darken-3 z-depth-4 pulse", id: "sign_in" unless current_user%> </li>
+          <% if current_user %>
+            <li> <%= image_tag current_user.image_url, class: "circle responsive-img small valign", height: "40", width: "40" unless !current_user%> </li>
+            <li> <a class="dropdown-button" href="#!" data-activates="dropdown1">Welcome <%= current_user.name %><i class="material-icons right">arrow_drop_down</i></a></li>
+          <% end %>
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+          <li><a href=<%= stores_path %>>Stores</a></li>
+          <li><a href="sass.html">Profile</a></li>
+          <li><a href="badges.html">Community</a></li>
+          <li><a href="collapsible.html">Login</a></li>
+          <li><a href="mobile.html">Logout</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <br>
+    <main>
+      <div class="container">
+        <body>
+          <div class="row">
+            <div class="col m12 s12">
+              <div class="card grey darken-4 z-depth-4" style="border-radius: 20px">
+                <br>
+                <h1 class='white-text center'>Welcome To Tank Man</h1>
+                  <ul class="collection white-text">
+                    <li class="collection-item avatar">
+                      <i class="material-icons circle">supervisor_account</i>
+                      <span class="title">Users</span>
+                      <p>0 Registered Users<br>
+                        Exchange valuable information with fellow aquarists
+                      </p>
+                      <a href="#!" class="secondary-content"><i class="material-icons">whatshot</i></a>
+                    </li>
+                    <li class="collection-item avatar">
+                      <i class="material-icons circle">insert_comment</i>
+                      <span class="title">Reviews</span>
+                      <p>0 Local Store Reviews<br>
+                        With reviews you can stay up to date on local stores.<br>
+                        Weather it's a sale or a recent ick outbreak, know before you walk in the door.
+                      </p>
+                      <a href="#!" class="secondary-content"><i class="material-icons">whatshot</i></a>
+                    </li>
+                    <li class="collection-item avatar">
+                      <i class="material-icons circle">insert_chart</i>
+                      <span class="title">Tank Management</span>
+                      <p>Managing over 0 user tanks<br>
+                        From water parameters, to setup, to liforms inside. Track it all with Tank Man.
+                      </p>
+                      <a href="#!" class="secondary-content"><i class="material-icons">whatshot</i></a>
+                    </li>
+                  </ul>
+                  <br><br>
+                <div class="center"><%= button_to "Sign in with Google", "/auth/google_oauth2", style: "border-radius: 20px", class: "btn btn-large orange-text grey darken-3 z-depth-4", id: "sign_in" %> </div>
+                <br><br>
+              </div>
+            </div>
+          </div>
+        </body>
       </div>
-        <input id="submit" type="submit" class="btn btn-small orange-text  grey darken-3 z-depth-4">
-        <%= link_to "Stores Near Me", stores_path, class: "btn btn-small orange-text  grey darken-3 z-depth-4 right"%>
-    </form>
-    <br><br>
-  </div>
-</div>
+    </main>
+    <footer class="page-footer">
+      <p class="center white-text">© 2017 Copyright Text</p>
+    </footer>
+  <script>
+   $(document).ready(function() {
+      $('select').material_select();
+      $(".button-collapse").sideNav();
+      $(".dropdown-button").dropdown();
+      $('.slider').slider();
+    });
+  </script>
+</html>
