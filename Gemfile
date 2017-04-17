@@ -35,7 +35,8 @@ gem 'httparty'
 
 gem 'yelp', require: 'yelp'
 gem "omniauth-google-oauth2"
-gem "geocode"
+gem 'rails_12factor', group: :developement
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -43,7 +44,6 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'pry'
   gem 'launchy'
-  gem 'rspec-rails', '~> 3.5'
 end
 
 group :development do
@@ -53,6 +53,7 @@ group :development do
 end
 
 group :test do
+  gem 'rspec-rails'
   gem 'newrelic_rpm'
   gem 'vcr'
   gem 'capybara'
