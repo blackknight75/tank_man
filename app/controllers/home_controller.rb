@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
 
   def show
-    render :show
+    @presenter = Presenter.new
+    render :layout => false
   end
 end
