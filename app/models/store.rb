@@ -71,7 +71,7 @@ class Store
 
 
   def tank_man_score
-    store = Review.where(place_id: @place_id).average(:score).to_i
+    Review.where(place_id: @place_id).average(:score).round
   end
 
   def complete_rating
