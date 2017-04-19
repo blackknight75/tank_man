@@ -19,6 +19,7 @@ class GoogleServices
   end
 
   def convert_zipcode_to_coordinates(zipcode)
+    binding.pry
     zipcode_info = Faraday.get("http://api.zippopotam.us/us/#{zipcode}")
     JSON.parse(zipcode_info.body, symbolize_names: true)
   end

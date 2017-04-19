@@ -11,8 +11,9 @@ describe "user can" do
     @current_user.tanks.create(name: "QT", size: 10, style: "coral", description: "not running yet")
   end
 
-  it "got to dashboard from root" do
-    visit '/'
+  it "visit dashboard page" do
+    visit dashboard_path(@current_user)
+
     expect(page).to have_content("scmountain17")
 
     within ('#dropdown1')do

@@ -1,38 +1,61 @@
-<h1>Welcome <%= current_user.name %></h1>
-</div>
-<div class="row">
-  <% @tanks.each do |tank| %>
-    <div class="col s12 m4">
-      <div class="card large">
-         <div class="card-image waves-effect z-depth-3 waves-block waves-light">
+<h1 class="white-text">Welcome <%= current_user.name %></h1>
 
+<div class="row">
+  <%= render "/search/search_box" %>
+  <div class="col s6 card large left grey darken-3" style="border-radius: 20px">
+    <span>water params chart</span>
+  </div>
+</div>
+
+<div id="modal1" class="modal grey darken-3" style="border-radius: 20px">
+  <div class="modal-content">
+    <h4 class="orange-text">New Tank</h4>
+    <%= form_for @tanks.new_tank, url: "user/tank", method: :post do |f|%>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <div class="input-field col s12">
+      <select class="white-text grey darken-3">
+        <option value="" disabled selected>Choose your option</option>
+        <option value="Freshwater">Freshwater</option>
+        <option value="Saltwater">Saltwater</option>
+        <option value="Reef">Reef</option>
+      </select>
+      <label>Materialize Select</label>
+    </div>
+    <%= f.label :image_url %>
+    <%= f.text_field :image_url %>
+    <%= f.label :description %>
+    <%= f.text_area :description, :rows => "50", :cols => "500" %>
+  </div>
+  <div class="modal-footer" style="background-color: #0072BC">
+    <%= f.submit "Add Tank", style: "border-radius: 20px", class: "orange-text grey darken-3 waves-effect waves-light btn"%>
+  </div>
+  <% end %>
+</div>
+</div>
+
+ <div class="row">
+   <% @tanks.each do |tank| %>
+     <div class="col s12 m6">
+       <div class="card" style="border-radius: 20px">
+         <div class="card-image">
+           <img class="materialboxed z-depth-3" width="650" src="<%= tank.image_url %>" style="border-radius: 20px">
          </div>
-         <div class="card-content">
-          <div id="store-title">
-            <span class="activator grey-text text-darken-4"><p><%= tank.name %><br></p class="strong"><i class="material-icons right">more_vert</i></span>
-          </div>
-          <div id="store-info" class="grey-text">
-             <p><%= tank.size %> Gallons</p>
-             <p>Tank Type: <%= tank.style %></p>
-             <p><%= tank.description %></p>
-           </div>
+         <div class="activator card-content">
+          <span class="activator black-text card-title"><%= tank.name %><i class="material-icons right">spa</i></span>
+          <p class="activator"><%= tank.size %> Gallons</p>
+          <p class="activator">Tank Type: <%= tank.style %></p>
          </div>
-         <div class="card-action">
-            <a href="#">link</a>
-            <a>Tank Man Rating: </a>
-          </div>
+         <div class="card-action z-depth-3">
+           <%= button_to "Tank Details", user_tank_path(tank), class: "waves-effect grey darken-3 orange-text btn" %>
+         </div>
          <div class="card-reveal">
            <span class="card-title grey-text text-darken-4">Tank Description<i class="material-icons right">close</i></span>
           <%= button_to "Go to Tank Page", "/user/tank/#{tank.id}", class: "btn btn-primary", method: :get %>
           <br><br>
-           <p>
-             Photos?
-           </p>
-           <p>
-            <%= tank.description %>
-           </p>
+           <p><%= tank.description %></p>
          </div>
        </div>
-    </div>
+     </div>
    <% end %>
  </div>

@@ -81,3 +81,30 @@ html {
     background-color: #ff9800;
     text-align: center;
 }
+
+label {
+    font-size: 1.2rem;
+    color: #0072BC;
+}
+
+
+input:not([type]), input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date], input[type=datetime], input[type=datetime-local], input[type=tel], input[type=number], input[type=search], textarea.materialize-textarea {
+{
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid orange;
+    border-radius: 0;
+    outline: none;
+    height: 3rem;
+    width: 100%;
+    font-size: 1rem;
+    margin: 0 0 20px 0;
+    padding: 0;
+    box-shadow: none;
+    box-sizing: content-box;
+    transition: all 0.3s;
+}
+
+.dropdown-content {
+    background-color: #424242;
+}

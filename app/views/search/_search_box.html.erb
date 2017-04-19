@@ -1,4 +1,4 @@
-<div class="col s4 grey darken-3 card">
+<div class="col s5 grey darken-3 card large right" style="border-radius: 20px">
   <h5 class='white-text'>Seach Stores By Zipcode</h5>
   <form action='/near_by_stores' method='get'>
     <div class="input-field card">
@@ -6,8 +6,31 @@
       <label class="label-icon" for="search"><i class="material-icons">search</i></label>
       <i class="material-icons">close</i>
     </div>
-      <input id="submit" type="submit" class="btn btn-small orange-text  grey darken-3 z-depth-4">
-      <%= link_to "Stores Near Me", stores_path, class: "btn btn-small orange-text  grey darken-3 z-depth-4 right"%>
+      <input id="submit" type="submit" class="btn btn-large orange-text  grey darken-4 z-depth-4" style="border-radius: 20px; width: 175px;" >
+      <%= link_to "Near Me", stores_path, class: "btn btn-large orange-text  grey darken-4 z-depth-4 right", style: "border-radius: 20px; 20px; width: 175px;"%>
   </form>
+  <br>
+    <div class="divider"></div>
+    <br>
+  <div class="row">
+    <div id="control-buttons1" class="col s12">
+      <a class="waves-effect grey darken-4 orange-text btn-large left" style="border-radius: 20px; 20px; width: 175px;" href="#modal1">Add A Tank</a>
+      <a class="waves-effect grey darken-4 orange-text btn-large right" style="border-radius: 20px; 20px; width: 175px;" href="#modal1">Add A Tank</a>
+    </div>
+  </div>
+    <br>
+    <div class="divider"></div>
+    <br>
+  <div class="row">
+    <div id="graph-ph-ammonia" class="col s12">
+      <a class="waves-effect grey darken-4 orange-text btn-large left" style="border-radius: 20px; 20px; width: 175px;">Ph</a>
+      <a class="waves-effect grey darken-4 orange-text btn-large right" style="border-radius: 20px; 20px; width: 175px;">Ammonia</a>
+    </div>
+
+    <div id="graph-ph-ammonia" class="col s12">
+      <a class="waves-effect grey darken-4 orange-text btn-large left" style="border-radius: 20px; 20px; width: 175px;">Nitrates</a>
+      <a class="waves-effect grey darken-4 orange-text btn-large right" style="border-radius: 20px; 20px; width: 175px;">Temperature</a>
+    </div>
+  </div>
   <br><br>
 </div>
