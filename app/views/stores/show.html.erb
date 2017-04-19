@@ -20,16 +20,15 @@
           <p class="red-text">Status: <%= @store.open_now %></p>
         <% end %>
         <br>
-        <p class="grey-text"><%= @store.display_phone %></p>
+        <p class="grey-text"><%= @store.display_phone %></p></br>
         <div class="reviews">
+        <div class="review-tm">
+          <p class="black-text">Total Score: <%= @store.complete_rating %></br></p>
+        </div>
           <p class="grey-text">Tank Man Score: <%= @store.tank_man_score %></p>
           <p class="grey-text">Yelp Score: <%= @store.yelp_rating %></p>
           <p class="grey-text">Google Score: <%= @store.google_rating %></p>
         </div>
-      </div>
-      <div class="card-action">
-        <a href="#">This is a link</a>
-        <a href="#">This is a link</a>
       </div>
     </div>
 
@@ -46,7 +45,9 @@
               <option value="4">★★★★</option>
               <option value="5">★★★★★</option>
             </select>
-            <input type="submit" params: { store: :@store.id}>
+            <div class="submit-review">
+              <input type="submit" params: { store: :@store.id}>
+            </div>
           </form>
 
         </div>
