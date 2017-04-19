@@ -11,5 +11,6 @@ class StoresController < ApplicationController
 
   def show
     @store = Store.store_details(params[:id])
+    @reviews = Review.where(place_id: @store.place_id)
   end
 end
