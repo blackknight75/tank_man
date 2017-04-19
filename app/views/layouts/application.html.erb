@@ -11,13 +11,13 @@
   </head>
   <ul id="dropdown1" class="dropdown-content">
     <li><a href="#!" class="blue-text">Profile</a></li>
-    <li><a href=<%= dashboard_path(current_user) %> class="blue-text">Dashboard</a></li>
+    <li><a href="/dashboard/<%= current_user.id %>" class="blue-text">Dashboard</a></li>
     <li class="divider" class="blue-text"></li>
     <li><a href=<%= logout_path %> class="blue-text">Logout</a></li>
   </ul>
   <div class="navbar-fixed">
     <nav>
-      <a href="<%=dashboard_path(current_user)  %>" class="brand-logo center">Tank Man</a>
+      <a href="/dashboard/<%= current_user.id %>" class="brand-logo center">Tank Man</a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="left valign-wrapper hide-on-med-and-down">
         <li><a href=<%= stores_path %>>Stores</a></li>

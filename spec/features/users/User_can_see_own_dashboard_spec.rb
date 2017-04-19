@@ -12,7 +12,7 @@ describe "as a user" do
   end
 
   it "can access dashboard" do
-    visit "/dashboard"
+    visit dashboard_path(@current_user)
     expect(page).to have_content("scmountain17")
 
       expect(page).to have_content("Biggin")

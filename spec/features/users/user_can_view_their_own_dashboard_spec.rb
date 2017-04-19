@@ -19,7 +19,7 @@ describe "user can" do
       click_on "Dashboard"
     end
 
-    expect(current_path).to eq("/dashboard")
+    expect(current_path).to eq("/dashboard/#{@current_user.id}")
     expect(page).to have_content("scmountain17")
 
     cards = page.all('.card-content')
@@ -41,7 +41,7 @@ describe "user can" do
   end
 
   it "click on tank card, go to tank show" do
-    visit dashboard_path
+    visit dashboard_path(@current_user)
 
     cards = page.all('.card-reveal')
 
