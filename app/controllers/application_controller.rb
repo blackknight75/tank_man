@@ -1,9 +1,13 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  helper_method :current_user, :check_registered_user
+  helper_method :current_user, :check_registered_user, :guest_user
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
+  end
+
+  def guest_user
+    redirect_to dashboard_path(current_user) if !current_user.nil?
   end
 
   def check_registered_user
