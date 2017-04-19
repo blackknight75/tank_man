@@ -3,12 +3,12 @@
 <div class="row">
   <% @stores.each do |store| %>
     <div class="col s12 m4">
-      <div class="card large" style="border-radius: 20px;">
+      <div class="card grey darken-4 large" style="border-radius: 20px;">
          <div class="card-image waves-effect z-depth-3 waves-block waves-light">
            <iframe
              style="border-radius: 20px;"
              class="card-image"
-             width="300"
+             width="100%"
              height="300"
              frameborder="0" style="border:0"
              src="https://www.google.com/maps/embed/v1/place?key=<%= store.google_embed_key  %>&q=place_id:<%= store.place_id  %>">
@@ -16,7 +16,7 @@
          </div>
          <div class="card-content">
           <div id="store-title">
-            <span class="activator grey-text text-darken-4"><p><%= link_to truncate(store.name, length: 30), "/stores/#{store.place_id}" %></p><i class="material-icons right">more_vert</i></span>
+            <span class="activator orange-text text-darken-4"><p><%= link_to truncate(store.name, length: 30), "/stores/#{store.place_id}" %></p><i class="material-icons right">spa</i></span>
           </div>
           <div id="store-info" class="grey-text">
             <span><%= store.street %></span>
@@ -29,7 +29,7 @@
              <p><%= store.display_phone %></p>
            </div>
          </div>
-         <div class="card-action">
+         <div class="card-action z-depth-3" style="border-radius: 20px;">
             <a href="#">link</a>
             <a>Tank Man Rating: </a>
           </div>

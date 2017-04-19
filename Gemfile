@@ -32,6 +32,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'figaro'
 gem 'faraday'
 gem 'httparty'
+gem 'kaminari'
 
 gem 'yelp', require: 'yelp'
 gem "omniauth-google-oauth2"
