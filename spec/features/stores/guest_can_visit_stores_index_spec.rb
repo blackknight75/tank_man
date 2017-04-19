@@ -9,7 +9,7 @@ describe 'when a guest visits store index' do
       visit stores_path
 
       within all('#store-title')[0] do
-        expect(page).to have_content("Petland Friscomore_vert")
+        expect(page).to have_content("Petland Friscospa")
       end
     end
   end

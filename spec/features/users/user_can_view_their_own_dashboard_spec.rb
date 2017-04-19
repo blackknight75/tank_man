@@ -12,7 +12,7 @@ describe "user can" do
   end
 
   it "got to dashboard from root" do
-    visit '/'
+    visit '/dashboard'
     expect(page).to have_content("scmountain17")
 
     within ('#dropdown1')do
