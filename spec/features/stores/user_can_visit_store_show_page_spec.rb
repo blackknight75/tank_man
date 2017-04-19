@@ -6,7 +6,7 @@ describe 'when a user visits a store show page' do
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@current_user)
     VCR.use_cassette("store") do
       visit "/stores/ChIJ85r6cuY8TIYR4CCzI-BY8KM"
-save_and_open_page
+
       expect(page).to have_content("San Fran")
       expect(page).to have_content("scmountain17")
       expect(page).to have_content("this place rules")
