@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 describe "reviews made on store" do
+
   before(:each) do
     @store = 'ChIJ85r6cuY8TIYR4CCzI-BY8KM'
     @current_user = User.create(name: "scmountain17", oauth_token: ENV['sc_gauth'], image_url: "www.yahoo.com")
