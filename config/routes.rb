@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/near_by_stores', to: 'store_search#index', as: "store_search"
   get 'user/:id/profile', to: 'user/profile#show', as: "user_profile"
 
+  resources :reviews
   resources :stores, only: [:index, :show]
   resources :sessions, only: [:create, :destroy]
   namespace :user do

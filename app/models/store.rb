@@ -69,7 +69,17 @@ class Store
     end
   end
 
+
   def tank_man_score
-    Review.where(place_id: @place_id).sum(:score)
+    Review.where(place_id: @place_id).average(:score).round
+  end
+
+  def complete_rating
+    denom = 0
+    denom += 1 if !@google_rating.nil? && @google_rating != 0
+    denom += 1 if !@yelp_rating.nil? && @yelp_rating != 0
+    denom += 1 if !tank_man_score.nil? && tank_man_score != 0
+    final = (@yelp_rating + @google_rating + tank_man_score)/denom
+    final.round(2)
   end
 end
