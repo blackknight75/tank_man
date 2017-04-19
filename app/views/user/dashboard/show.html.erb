@@ -1,10 +1,15 @@
 <h1 class="white-text">Welcome <%= current_user.name %></h1>
 
 <div class="row">
-  <%= render "/search/search_box" %>
-  <div class="col s6 card large left grey darken-3" style="border-radius: 20px">
-    <span>water params chart</span>
-  </div>
+    <div class="col s6 right">
+      <div class="grey darken-3 card large" style="border-radius: 20px">
+        <div class="card-content z-depth-3">
+          <%= render "/search/search_box" %>
+        </div>
+      </div>
+    </div>
+    <div class="col s6 card large left grey darken-3" style="border-radius: 20px; background-image: url('https://i1.wp.com/landoffish.com/wp-content/uploads/2017/03/Nitrate-chart-2.png?fit=610%2C382'); background-size: cover">
+    </div>
 </div>
 
 <div id="modal1" class="modal grey darken-3" style="border-radius: 20px">
@@ -37,7 +42,7 @@
  <div class="row">
    <% @tanks.each do |tank| %>
      <div class="col s12 m6">
-       <div class="card" style="border-radius: 20px">
+       <div class="card large" style="border-radius: 20px">
          <div class="card-image">
            <img class="materialboxed z-depth-3" width="650" src="<%= tank.image_url %>" style="border-radius: 20px">
          </div>
@@ -46,12 +51,12 @@
           <p class="activator"><%= tank.size %> Gallons</p>
           <p class="activator">Tank Type: <%= tank.style %></p>
          </div>
-         <div class="card-action z-depth-3">
-           <%= button_to "Tank Details", user_tank_path(tank), class: "waves-effect grey darken-3 orange-text btn" %>
+         <div class="card-action z-depth-3" style="border-radius: 20px">
+           <%= button_to "Tank Details", user_tank_path(tank), class: "waves-effect grey darken-3 orange-text btn", style: "border-radius: 20px" %>
          </div>
          <div class="card-reveal">
            <span class="card-title grey-text text-darken-4">Tank Description<i class="material-icons right">close</i></span>
-          <%= button_to "Go to Tank Page", "/user/tank/#{tank.id}", class: "btn btn-primary", method: :get %>
+          <%= button_to "Go to Tank Page", "/user/tank/#{tank.id}", class: "waves-effect grey darken-3 orange-text btn", method: :get %>
           <br><br>
            <p><%= tank.description %></p>
          </div>
