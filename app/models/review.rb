@@ -3,17 +3,11 @@ belongs_to :user
 
 
   def stars
-    if score == 5
-      "★★★★★"
-    elsif score == 4
-      "★★★★"
-    elsif score == 3
-      "★★★"
-    elsif score == 2
-      "★★"
-    else score == 1
-      "★"
-    end
+   "★★★★★" if score == 5
+    "★★★★" if score == 4
+     "★★★" if score == 3
+      "★★" if score == 2
+       "★" if score == 1
   end
 
   def user_name
