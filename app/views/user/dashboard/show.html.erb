@@ -47,12 +47,12 @@
            <img class="materialboxed z-depth-3" width="650" src="<%= tank.image_url %>" style="border-radius: 20px">
          </div>
          <div class="activator card-content" id="tank-details">
-          <span class="activator black-text card-title"><%= tank.name %><i class="material-icons right">spa</i></span>
-          <p class="activator"><%= tank.size %> Gallons</p>
-          <p class="activator">Tank Type: <%= tank.style %></p>
+          <span class="activator orange-text card-title"><%= tank.name %><i class="material-icons blue-text right">spa</i></span>
+          <p class="activator blue-text"><%= tank.size %> Gallons</p>
+          <p class="activator blue-text">Tank Type: <%= tank.style %></p>
          </div>
-         <div class="card-action z-depth-3" style="border-radius: 20px">
-           <%= button_to "Tank Details", user_tank_path(tank), class: "waves-effect grey darken-3 orange-text btn", style: "border-radius: 20px" %>
+         <div class="card-action z-depth-3 grey darken-3" style="border-radius: 20px;">
+           <%= button_to "Tank Details", user_tank_path(tank), class: "waves-effect grey darken-4 orange-text btn", style: "border-radius: 20px" %>
          </div>
          <div class="card-reveal">
            <span class="card-title grey-text text-darken-4">Tank Description<i class="material-icons right">close</i></span>
@@ -64,3 +64,4 @@
      </div>
    <% end %>
  </div>
+ <br><br>
