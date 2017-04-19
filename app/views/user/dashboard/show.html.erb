@@ -1,15 +1,15 @@
 <h1 class="white-text">Welcome <%= current_user.name %></h1>
 
 <div class="row">
-    <div class="col s6 right">
-      <div class="grey darken-3 card large" style="border-radius: 20px">
-        <div class="card-content z-depth-3">
-          <%= render "/search/search_box" %>
-        </div>
+  <div class="col s6 right">
+    <div class="grey darken-3 card large" style="border-radius: 20px">
+      <div class="card-content z-depth-3">
+        <%= render "/search/search_box" %>
       </div>
     </div>
-    <div class="col s6 card large left grey darken-3" style="border-radius: 20px; background-image: url('https://i1.wp.com/landoffish.com/wp-content/uploads/2017/03/Nitrate-chart-2.png?fit=610%2C382'); background-size: cover">
-    </div>
+  </div>
+  <div class="col s6 card large left grey darken-3" style="border-radius: 20px; background-image: url('https://i1.wp.com/landoffish.com/wp-content/uploads/2017/03/Nitrate-chart-2.png?fit=610%2C382'); background-size: cover">
+  </div>
 </div>
 
 <div id="modal1" class="modal grey darken-3" style="border-radius: 20px">
@@ -46,7 +46,7 @@
          <div class="card-image">
            <img class="materialboxed z-depth-3" width="650" src="<%= tank.image_url %>" style="border-radius: 20px">
          </div>
-         <div class="activator card-content">
+         <div class="activator card-content" id="tank-details">
           <span class="activator black-text card-title"><%= tank.name %><i class="material-icons right">spa</i></span>
           <p class="activator"><%= tank.size %> Gallons</p>
           <p class="activator">Tank Type: <%= tank.style %></p>

@@ -13,7 +13,6 @@ describe "user can" do
 
   it "visit dashboard page" do
     visit dashboard_path(@current_user)
-
     expect(page).to have_content("scmountain17")
 
     within ('#dropdown1')do
@@ -25,17 +24,17 @@ describe "user can" do
 
     cards = page.all('.card-content')
 
-    within(cards[0]) do
+    within all('#tank-details')[0] do
       expect(page).to have_content("Biggin")
       expect(page).to have_content(125)
     end
 
-    within(cards[1]) do
+    within all('#tank-details')[1] do
       expect(page).to have_content("Saltydog")
       expect(page).to have_content(55)
     end
 
-    within(cards[2]) do
+    within all('#tank-details')[2] do
       expect(page).to have_content("QT")
       expect(page).to have_content(10)
     end
