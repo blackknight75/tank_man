@@ -11,4 +11,14 @@ describe Store do
       end
     end
   end
+  context '.get_yelp_rating' do
+    it "returns one store" do
+      VCR.use_cassette("store") do
+        require "pry"; binding.pry
+        expect(Store.get_yelp_rating(+14698286890)).to be_a(Integer)
+        expect(Store).to respond_to(:store_details)
+
+      end
+    end
+  end
 end
