@@ -9,4 +9,8 @@ class Tank < ApplicationRecord
   def self.new_fish
     Fish.new
   end
+
+  def fish_count
+    fish.count
+  end
 end

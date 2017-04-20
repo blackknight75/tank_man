@@ -1,16 +1,19 @@
 class User::FishController < ApplicationController
 
   def create
-    fish = Fish.new(fish_params)
+    fish = Tank.find(params[:tank_id]).fish.new(fish_params)
+    binding.pry
     if fish.save
-      redirect_to 'dashboard/current_user.id'
+      flash[:success] = "Your tank was created successfully!"
+      redirect_to dashboard_path(current_user)
     else
-      redirect_to 'dashboard/current_user.id'
+      redirect_to request.referer
     end
   end
 
   private
 
   def fish_params
+    params.require(:fish).permit(:name, :breed, :image_url, :temperament, :description)
   end
 end
