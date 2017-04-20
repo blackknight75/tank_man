@@ -17,6 +17,6 @@ class User::TanksController < ApplicationController
   private
 
   def tank_params
-    params.require(:tank).permit(:name, :image_url, :description, :style)
+    params.require(:tank).permit(:name, :image_url, :description, :size, :style)
   end
 end
