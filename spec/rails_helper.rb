@@ -19,7 +19,28 @@ VCR.configure do |c|
 end
 
 # Add additional requires below this line. Rails is not loaded until this point!
-
+def store_stub
+  {:geometry=>
+  {:location=>{:lat=>44.045931, :lng=>-123.016249},
+   :viewport=>{:northeast=>{:lat=>44.0474006302915, :lng=>-123.0148993197085}, :southwest=>{:lat=>44.0447026697085, :lng=>-123.0175972802915}}},
+ :icon=>"https://maps.gstatic.com/mapfiles/place_api/icons/shopping-71.png",
+ :id=>"f4050d4b15b5284d4bf31fe4aa62b56e50df9c25",
+ :name=>"The Nautilus Tropical Fish",
+ :opening_hours=>{:open_now=>true, :weekday_text=>[]},
+ :photos=>
+  [{:height=>3464,
+    :html_attributions=>["<a href=\"https://maps.google.com/maps/contrib/100222379197515106636/photos\">David Kennedy</a>"],
+    :photo_reference=>
+     "CoQBdwAAANoNT5y4PKwc8wKpKjxyAST4R-lOtXBL7kEf74NrlCCwbUllqoFaG6cj7UcgUmT5LC5-NCLgDaFaUC7MMuv5eo0S4QifUNXdvxdg_ET8p5cJ5A2afnkDWXWEQh1xxSvEPxHK0xj9aLFjp52JofJ3njk2kNIk5INsEK4O5dIfRMUoEhA9B2YU7KD5gkgZPFJjCI-rGhRS1AbnLc9wln8ZjS-b4y-NueXUEQ",
+    :width=>4618}],
+ :place_id=>"ChIJnYUuEErgwFQR6TmPQnQlIoM",
+ :rating=>4.3,
+ :reference=>
+  "CmRSAAAAQQOQCnC2obS8QHX_TCzJfWpsBjAZFwzzJrw81c_n7wSAxBdWhTDWzU1mQByeZzI0yAFTyldboRiHIkxIvJFqEWcgjlmsh-HjDVYpinHZti3_uY3PrhngHfNUxi8G15cCEhBxZqFBpmPLgdVvN7BTplEzGhSVWbhdxHOLbJHSUDTDicIbCXQ8gQ",
+ :scope=>"GOOGLE",
+ :types=>["pet_store", "food", "store", "point_of_interest", "establishment"],
+ :vicinity=>"727 Main Street, Springfield"}
+end
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
 # run as spec files by default. This means that files in spec/support that end

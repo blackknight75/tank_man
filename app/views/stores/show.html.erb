@@ -45,9 +45,7 @@
               <option value="4">★★★★</option>
               <option value="5">★★★★★</option>
             </select>
-            <div class="submit-review">
               <input type="submit" params: { store: :@store.id}>
-            </div>
           </form>
 
         </div>
@@ -61,7 +59,7 @@
       <%= review.user.name %><br>
         Rated: <%= review.stars %><br>
         Review: <%= review.body %><br>
-  </body>
+    </body>
   </div>
 </div>
 <% end %>
