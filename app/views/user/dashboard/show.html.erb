@@ -23,11 +23,32 @@
     <%= f.label :image_url %>
     <%= f.text_field :image_url %>
     <%= f.label :style %>
-    <%= f.select :style, ["Freshwater", "Saltwater", "Reef", "Brackish"] %>
+    <%= f.select :style, ["Freshwater", "Saltwater", "Reef", "Planted"] %>
     <br>
     <%= f.label :description %>
     <%= f.text_area :description, :rows => "50", :cols => "500" %>
     <%= f.submit "Add Tank", style: "border-radius: 20px", class: "orange-text grey darken-4 waves-effect btn right"%>
+  </div>
+  <br><br>
+  <% end %>
+</div>
+
+<div id="modal2" class="modal grey darken-3" style="border-radius: 20px">
+  <div class="modal-content">
+    <h4 class="orange-text">New Tank</h4>
+    <%= form_for [current_user, @tanks.new_tank, @tanks.new_fish] do |f|%>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :breed %>
+    <%= f.text_field :breed %>
+    <%= f.label :image_url %>
+    <%= f.text_field :image_url %>
+    <%= f.label :temperament %>
+    <%= f.select :temperament, ["Community", "Semi-Aggressive", "Aggressive"] %>
+      <br>
+    <%= f.label :description %>
+    <%= f.text_area :description, :rows => "50", :cols => "500" %>
+    <%= f.submit "Add Fish to Tank", style: "border-radius: 20px", class: "orange-text grey darken-4 waves-effect btn right"%>
   </div>
   <br><br>
   <% end %>
@@ -46,11 +67,11 @@
           <a class="orange-text card-title" href="<%= user_tank_path(tank.id) %>"><%= tank.name %><i class="material-icons blue-text right">spa</i></a>
           <p class="activator blue-text"><%= tank.size %> Gallons</p>
           <p class="activator blue-text">Tank Type: <%= tank.style %></p>
-          <p class="activator blue-text">Fish Count: 0</p>
+          <p class="activator blue-text">Fish Count: <%= tank.fish_count %></p>
          </div>
          <div id="tank-options" class="card-action z-depth-3 grey darken-3" style="border-radius: 20px;">
            <%= link_to "Tank Details", user_tank_path(tank), class: "waves-effect grey darken-4 orange-text btn", style: "border-radius: 20px"%>
-           <%= link_to "Add a Fish", user_tank_fish_index_path(tank), class: "waves-effect grey darken-4 orange-text btn", style: "border-radius: 20px"%>
+           <%= link_to "Add a Fish", user_tank_fish_index_path(tank), class: "waves-effect grey darken-4 orange-text btn", style: "border-radius: 20px", href: "#modal2"%>
            <%= link_to "Enter Parameters", "", class: "waves-effect grey darken-4 orange-text btn", style: "border-radius: 20px" %>
          </div>
          <div class="card-reveal">
