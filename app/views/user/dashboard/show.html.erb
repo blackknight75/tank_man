@@ -29,7 +29,8 @@
          </div>
          <div id="tank-options" class="card-action z-depth-3 grey darken-3" style="border-radius: 20px;">
            <%= link_to "Tank Details", user_tank_path(tank), class: "waves-effect grey darken-4 orange-text btn", style: "border-radius: 20px"%>
-           <%= link_to "Add a Fish", "", class: "waves-effect grey darken-4 orange-text btn modal-trigger", style: "border-radius: 20px", href: "#modal2"%>
+           <button class="waves-effect grey darken-4 orange-text btn-large z-depth-3 modal-trigger left" style="border-radius: 20px; 20px; width: 175px;" data-target="modal2">Add a Fish</button>
+           <%#= button_to "Add a Fish", "", class: "waves-effect grey darken-4 orange-text btn modal-trigger", style: "border-radius: 20px", href: "#modal2"%>
            <%= link_to "Enter Parameters", "", class: "waves-effect grey darken-4 orange-text btn", style: "border-radius: 20px" %>
          </div>
          <div class="card-reveal">
