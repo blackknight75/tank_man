@@ -51,6 +51,6 @@ describe "user can" do
       click_button "Go to Tank Page"
     end
 
-    expect(current_path).to eq"/user/tank/#{@tank.id}"
+    expect(current_path).to eq"/user/tanks/#{@tank.id}"
   end
 end

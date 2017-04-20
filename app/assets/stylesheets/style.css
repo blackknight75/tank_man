@@ -87,7 +87,6 @@ label {
     color: #0072BC;
 }
 
-
 input:not([type]), input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date], input[type=datetime], input[type=datetime-local], input[type=tel], input[type=number], input[type=search], textarea.materialize-textarea {
     background-color: transparent;
     border: none;
@@ -105,5 +104,15 @@ input:not([type]), input[type=text], input[type=password], input[type=email], in
 }
 
 .dropdown-content {
-    background-color: #424242;
+    background-color: #fff;
+}
+
+.select-wrapper input.select-dropdown {
+    border-bottom: 1px solid orange;
+    color: #fff;
+}
+
+.dropdown-content li > a, .dropdown-content li > span {
+    font-size: 16px;
+    color: #0072BC;
 }

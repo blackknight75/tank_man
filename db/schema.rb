@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170419053314) do
+ActiveRecord::Schema.define(version: 20170419212708) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "fish", force: :cascade do |t|
+    t.string  "name"
+    t.string  "breed"
+    t.string  "temperament"
+    t.string  "image_url"
+    t.string  "description"
+    t.integer "tank_id"
+    t.index ["tank_id"], name: "index_fish_on_tank_id", using: :btree
+  end
 
   create_table "reviews", force: :cascade do |t|
     t.string  "place_id"
@@ -44,6 +54,7 @@ ActiveRecord::Schema.define(version: 20170419053314) do
     t.string   "image_url"
   end
 
+  add_foreign_key "fish", "tanks"
   add_foreign_key "reviews", "users"
   add_foreign_key "tanks", "users"
 end
