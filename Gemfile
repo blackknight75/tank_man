@@ -36,6 +36,7 @@ gem 'kaminari'
 
 gem 'yelp', require: 'yelp'
 gem "omniauth-google-oauth2"
+
 gem 'rails_12factor', group: :developement
 
 # Use Capistrano for deployment
