@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   resources :stores, only: [:index, :show]
   resources :sessions, only: [:create, :destroy]
   namespace :user do
-    resources :tank
+    resources :tanks do
+      resources :fish
+    end
   end
   root to: 'home#show'
 end
