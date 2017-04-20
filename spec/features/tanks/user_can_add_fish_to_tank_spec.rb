@@ -12,13 +12,13 @@ describe "when a user visits the user dashboard" do
     billy.tanks.create(name: "QT", size: 10, style: "coral", description: "not running yet")
   end
 
-  it "they click on add fish fill in form, submit and see fish count incrament up" do
+  xit "they click on add fish fill in form, submit and see fish count incrament up" do
     visit "dashboard/#{@current_user.id}"
 
     within all('#tank-options')[0] do
       click_on "Add a Fish"
     end
 
-    
+
   end
 end

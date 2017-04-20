@@ -43,7 +43,7 @@
            <img class="materialboxed z-depth-3" width="650" src="<%= tank.image_url %>" style="border-radius: 20px">
          </div>
          <div class="activator card-content" id="tank-details">
-          <span class="orange-text card-title"><%= link_to tank.name, "" %><i class="material-icons blue-text right">spa</i></span>
+          <a class="orange-text card-title" href="<%= user_tank_path(tank.id) %>"><%= tank.name %><i class="material-icons blue-text right">spa</i></a>
           <p class="activator blue-text"><%= tank.size %> Gallons</p>
           <p class="activator blue-text">Tank Type: <%= tank.style %></p>
           <p class="activator blue-text">Fish Count: 0</p>
@@ -55,7 +55,7 @@
          </div>
          <div class="card-reveal">
            <span class="card-title grey-text text-darken-4">Tank Description<i class="material-icons right">close</i></span>
-          <%= button_to "Go to Tank Page", "/user/tank/#{tank.id}", class: "waves-effect grey darken-3 orange-text btn", method: :get %>
+          <%= button_to "Go to Tank Page", "/user/tanks/#{tank.id}", class: "waves-effect grey darken-3 orange-text btn", method: :get %>
           <br><br>
            <p><%= tank.description %></p>
          </div>
