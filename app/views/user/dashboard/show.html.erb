@@ -36,9 +36,10 @@
 <div id="modal3" class="modal grey darken-3" style="border-radius: 20px">
   <div class="modal-content">
     <h4 class="orange-text">New Tank</h4>
-    <%= form_for [current_user, @tanks.new_tank, @tanks.new_water_parameters] do |f|%>
+    <%= form_for [current_user, tank.new_tank, tank.new_water_parameters] do |f|%>
+    Pre-populated with Ideal Parameters</br>
     <%= f.label :ph %>
-    <%= f.text_field :ph, placeholder: "6.0-9.0" %>
+    <%= f.range_field :ph, :in => 5.0..10.0, :step => '.1'  %></br>
     <%= f.label :ammonia %>
     <%= f.text_field :ammonia, placeholder: "0.0" %>
     <%= f.label :nitrite %>

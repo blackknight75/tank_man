@@ -11,7 +11,7 @@ class Tank < ApplicationRecord
     Fish.new
   end
 
-  def self.new_water_parameters
+  def new_water_parameters
     WaterParameter.new
   end
 end

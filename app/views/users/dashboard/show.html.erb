@@ -1,0 +1,8 @@
+<h1>Welcome <%= current_user.name %></h1>
+<h2>My Tanks</h2>
+<%= @tanks.each do |tank| %>
+  <%= tank.name %>
+  <%= tank.size %>
+  <%= tank.style %>
+  <%= tank.description %>
+  <% end %>
