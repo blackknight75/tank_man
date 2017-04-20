@@ -11,49 +11,6 @@
   <div class="col s6 card large left grey darken-3" style="border-radius: 20px; background-image: url('https://i1.wp.com/landoffish.com/wp-content/uploads/2017/03/Nitrate-chart-2.png?fit=610%2C382'); background-size: cover">
   </div>
 </div>
-
-<div id="modal1" class="modal grey darken-3" style="border-radius: 20px">
-  <div class="modal-content">
-    <h4 class="orange-text">New Tank</h4>
-    <%= form_for [current_user, @tanks.new_tank] do |f|%>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-    <%= f.label :size %>
-    <%= f.text_field :size %>
-    <%= f.label :image_url %>
-    <%= f.text_field :image_url %>
-    <%= f.label :style %>
-    <%= f.select :style, ["Freshwater", "Saltwater", "Reef", "Brackish"] %>
-    <br>
-    <%= f.label :description %>
-    <%= f.text_area :description, :rows => "50", :cols => "500" %>
-    <%= f.submit "Add Tank", style: "border-radius: 20px", class: "orange-text grey darken-4 waves-effect btn right"%>
-  </div>
-  <br><br>
-  <% end %>
-</div>
-
-<div id="modal3" class="modal grey darken-3" style="border-radius: 20px">
-  <div class="modal-content">
-    <h4 class="orange-text">New Tank</h4>
-    <%= form_for [current_user, tank.new_tank, tank.new_water_parameters] do |f|%>
-    Pre-populated with Ideal Parameters</br>
-    <%= f.label :ph %>
-    <%= f.range_field :ph, :in => 5.0..10.0, :step => '.1'  %></br>
-    <%= f.label :ammonia %>
-    <%= f.text_field :ammonia, placeholder: "0.0" %>
-    <%= f.label :nitrite %>
-    <%= f.text_field :nitrite, placeholder: "0.0" %>
-    <%= f.label :nitrate %>
-    <%= f.text_field :nitrate, placeholder: "< 50 ppm" %>
-    <%= f.label :water_change %>
-    <%= f.text_field :water_change, placeholder: "20%" %>
-    <%= f.submit "Submit", style: "border-radius: 20px", class: "orange-text grey darken-4 waves-effect btn right"%>
-  </div>
-  <br><br>
-  <% end %>
-</div>
-
 </div>
 
  <div class="row">
@@ -64,15 +21,15 @@
            <img class="materialboxed z-depth-3" width="650" src="<%= tank.image_url %>" style="border-radius: 20px">
          </div>
          <div class="activator card-content" id="tank-details">
-          <a class="orange-text card-title" href="<%= user_tank_path(tank.id) %>"><%= tank.name %><i class="material-icons blue-text right">spa</i></a>
+          <a class="orange-text card-title" href="<%= user_tank_path(tank.id) %>"><%= tank.name %></a><a><i class="activator material-icons blue-text right">spa</i></a>
           <p class="activator blue-text"><%= tank.size %> Gallons</p>
           <p class="activator blue-text">Tank Type: <%= tank.style %></p>
-          <p class="activator blue-text">Fish Count: 0</p>
+          <p class="activator blue-text">Fish Count: <%= tank.fish_count %></p>
          </div>
          <div id="tank-options" class="card-action z-depth-3 grey darken-3" style="border-radius: 20px;">
            <%= link_to "Tank Details", user_tank_path(tank), class: "waves-effect grey darken-4 orange-text btn", style: "border-radius: 20px"%>
-           <%= link_to "Add a Fish", user_tank_fish_index_path(tank), class: "waves-effect grey darken-4 orange-text btn", style: "border-radius: 20px"%>
            <%= link_to "Enter Parameters", user_tank_water_parameters_path(tank), class: "waves-effect grey darken-4 orange-text btn", style: "border-radius: 20px", href: "#modal3" %>
+           <%= link_to "Add a Fish", "", class: "waves-effect grey darken-4 orange-text btn", style: "border-radius: 20px", href: "#modal2"%>
          </div>
          <div class="card-reveal">
            <span class="card-title grey-text text-darken-4">Tank Description<i class="material-icons right">close</i></span>
@@ -82,6 +39,74 @@
          </div>
        </div>
      </div>
+     <div id="modal1" class="modal grey darken-3" style="border-radius: 20px">
+       <div class="modal-content">
+         <h4 class="orange-text">New Tank</h4>
+         <%= form_for [current_user, tank.new_tank] do |f|%>
+         <%= f.label :name %>
+         <%= f.text_field :name %>
+         <%= f.label :size %>
+         <%= f.text_field :size %>
+         <%= f.label :image_url %>
+         <%= f.text_field :image_url %>
+         <%= f.label :style %>
+         <%= f.select :style, ["Freshwater", "Saltwater", "Reef", "Planted"] %>
+         <br>
+         <%= f.label :description %>
+         <%= f.text_area :description, :rows => "50", :cols => "500" %>
+         <%= f.submit "Add Tank", style: "border-radius: 20px", class: "orange-text grey darken-4 waves-effect btn right"%>
+       </div>
+       <br><br>
+       <% end %>
+     </div>
+
+     <div id="modal2" class="modal grey darken-3" style="border-radius: 20px">
+       <div class="modal-content">
+         <h4 class="orange-text">Add Fish To Tank</h4>
+         <%= form_for [current_user, tank, tank.new_fish] do |f|%>
+         <%= f.label :name %>
+         <%= f.text_field :name %>
+         <%= f.label :breed %>
+         <%= f.text_field :breed %>
+         <%= f.label :image_url %>
+         <%= f.text_field :image_url %>
+         <%= f.label :temperament %>
+         <%= f.select :temperament, ["Community", "Semi-Aggressive", "Aggressive"] %>
+           <br>
+         <%= f.label :description %>
+         <%= f.text_area :description, :rows => "50", :cols => "500" %>
+         <%= f.submit "Add Fish to Tank", style: "border-radius: 20px", class: "orange-text grey darken-4 waves-effect btn right"%>
+       </div>
+       <br><br>
+       <% end %>
+     </div>
+     <div id="modal3" class="modal grey darken-3" style="border-radius: 20px">
+       <div class="modal-content">
+         <h4 class="orange-text">Parameter Input</h4>
+         <%= form_for [current_user, tank, tank.new_water_parameters] do |f|%>
+         Listed with Ideal Parameters</br></br>
+
+         <%= f.label :ph %>
+         <br>Aim for 7.3 - 8.4 (depending on tank type)
+         <%= f.text_field :ph %></br>
+         <%= f.label :ammonia %>
+         <br>Aim for 0.0
+         <%= f.text_field :ammonia %>
+         <%= f.label :nitrite %>
+         <br>Aim for 0.0
+         <%= f.text_field :nitrite %>
+         <%= f.label :nitrate %>
+         <br>Aim for < 50 ppm
+         <%= f.text_field :nitrate %>
+         <%= f.label :water_change %>
+         <br>Aim for 20% of tank volume
+         <%= f.text_field :water_change %>
+         <%= f.submit "Submit", style: "border-radius: 20px", class: "orange-text grey darken-4 waves-effect btn right"%>
+       </div>
+       <br><br>
+       <% end %>
+     </div>
+
    <% end %>
  </div>
  <br><br>

@@ -1,4 +1,4 @@
 class WaterParameter < ApplicationRecord
-  belongs_to :tanks
+  belongs_to :tank
 
 end

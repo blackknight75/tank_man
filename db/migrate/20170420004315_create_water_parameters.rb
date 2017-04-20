@@ -6,6 +6,8 @@ class CreateWaterParameters < ActiveRecord::Migration[5.0]
       t.float :nitrate
       t.float :nitrite
       t.integer :water_change
+      
+      t.timestamps null: false
       t.references :tank, foreign_key: true
     end
   end

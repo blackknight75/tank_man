@@ -55,12 +55,14 @@ ActiveRecord::Schema.define(version: 20170420004315) do
   end
 
   create_table "water_parameters", force: :cascade do |t|
-    t.float   "ph"
-    t.float   "ammonia"
-    t.float   "nitrate"
-    t.float   "nitrite"
-    t.integer "water_change"
-    t.integer "tank_id"
+    t.float    "ph"
+    t.float    "ammonia"
+    t.float    "nitrate"
+    t.float    "nitrite"
+    t.integer  "water_change"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "tank_id"
     t.index ["tank_id"], name: "index_water_parameters_on_tank_id", using: :btree
   end
 
