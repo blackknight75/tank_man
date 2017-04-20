@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   namespace :user do
     resources :tanks do
       resources :fish
+      resources :water_parameters
     end
   end
   root to: 'home#show'

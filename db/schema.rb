@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170419212708) do
+ActiveRecord::Schema.define(version: 20170420004315) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,7 +54,18 @@ ActiveRecord::Schema.define(version: 20170419212708) do
     t.string   "image_url"
   end
 
+  create_table "water_parameters", force: :cascade do |t|
+    t.float   "ph"
+    t.float   "ammonia"
+    t.float   "nitrate"
+    t.float   "nitrite"
+    t.integer "water_change"
+    t.integer "tank_id"
+    t.index ["tank_id"], name: "index_water_parameters_on_tank_id", using: :btree
+  end
+
   add_foreign_key "fish", "tanks"
   add_foreign_key "reviews", "users"
   add_foreign_key "tanks", "users"
+  add_foreign_key "water_parameters", "tanks"
 end

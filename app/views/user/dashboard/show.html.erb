@@ -33,6 +33,26 @@
   <% end %>
 </div>
 
+<div id="modal3" class="modal grey darken-3" style="border-radius: 20px">
+  <div class="modal-content">
+    <h4 class="orange-text">New Tank</h4>
+    <%= form_for [current_user, @tanks.new_tank, @tanks.new_water_parameters] do |f|%>
+    <%= f.label :ph %>
+    <%= f.text_field :ph, placeholder: "6.0-9.0" %>
+    <%= f.label :ammonia %>
+    <%= f.text_field :ammonia, placeholder: "0.0" %>
+    <%= f.label :nitrite %>
+    <%= f.text_field :nitrite, placeholder: "0.0" %>
+    <%= f.label :nitrate %>
+    <%= f.text_field :nitrate, placeholder: "< 50 ppm" %>
+    <%= f.label :water_change %>
+    <%= f.text_field :water_change, placeholder: "20%" %>
+    <%= f.submit "Submit", style: "border-radius: 20px", class: "orange-text grey darken-4 waves-effect btn right"%>
+  </div>
+  <br><br>
+  <% end %>
+</div>
+
 </div>
 
  <div class="row">
@@ -51,7 +71,7 @@
          <div id="tank-options" class="card-action z-depth-3 grey darken-3" style="border-radius: 20px;">
            <%= link_to "Tank Details", user_tank_path(tank), class: "waves-effect grey darken-4 orange-text btn", style: "border-radius: 20px"%>
            <%= link_to "Add a Fish", user_tank_fish_index_path(tank), class: "waves-effect grey darken-4 orange-text btn", style: "border-radius: 20px"%>
-           <%= link_to "Enter Parameters", "", class: "waves-effect grey darken-4 orange-text btn", style: "border-radius: 20px" %>
+           <%= link_to "Enter Parameters", user_tank_water_parameters_path(tank), class: "waves-effect grey darken-4 orange-text btn", style: "border-radius: 20px", href: "#modal3" %>
          </div>
          <div class="card-reveal">
            <span class="card-title grey-text text-darken-4">Tank Description<i class="material-icons right">close</i></span>
