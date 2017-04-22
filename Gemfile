@@ -33,6 +33,7 @@ gem 'figaro'
 gem 'faraday'
 gem 'httparty'
 gem 'kaminari'
+gem 'highcharts-rails'
 
 gem 'yelp', require: 'yelp'
 gem "omniauth-google-oauth2"

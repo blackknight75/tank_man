@@ -1,17 +1,18 @@
 <h1 class="white-text">Welcome <%= current_user.name %></h1>
 
-</div>
 <div class="row">
-  <div class="col s5 right">
-    <div class="grey darken-3 card large" style="border-radius: 20px">
-      <div class="card-content z-depth-3">
+  <div class="col s6 right">
+    <div class="grey darken-3 card z-depth-3" style="border-radius: 20px;">
+      <div class="card-content">
         <%= render "/search/search_box" %>
       </div>
     </div>
   </div>
-  <div class="col s6 card large left grey darken-3" style="border-radius: 20px; background-image: url('https://i1.wp.com/landoffish.com/wp-content/uploads/2017/03/Nitrate-chart-2.png?fit=610%2C382'); background-size: cover">
+  <div class="col s6 left card z-depth-4">
+    <div id="test"  class="center"></div>
   </div>
 </div>
+
 
  <div class="row">
    <% @tanks.each do |tank| %>
@@ -107,8 +108,35 @@
        <br><br>
        <% end %>
      </div>
-     </div>
-
+   </div>
    <% end %>
  </div>
  <br><br>
+
+ <script type="text/javascript">
+ $(function () {
+  var myChart = Highcharts.chart('test', {
+      chart: {
+          type: 'line'
+      },
+      title: {
+          text: 'Water Parameters'
+      },
+      xAxis: {
+          categories: ['Apples', 'Bananas', 'Oranges']
+      },
+      yAxis: {
+          title: {
+              text: 'Measurement'
+          }
+      },
+      series: [{
+          name: 'pH',
+          data: [1, 0, 4]
+      }, {
+          name: 'Ammonia',
+          data: [5, 7, 30]
+      }]
+  });
+});
+ </script>
