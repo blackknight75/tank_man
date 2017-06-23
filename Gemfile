@@ -34,6 +34,7 @@ gem 'faraday'
 gem 'httparty'
 gem 'kaminari'
 gem 'highcharts-rails'
+gem 'active_model_serializers', '~> 0.10.0'
 
 gem 'yelp', require: 'yelp'
 gem "omniauth-google-oauth2"

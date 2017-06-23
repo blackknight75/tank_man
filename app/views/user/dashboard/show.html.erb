@@ -9,7 +9,7 @@
     </div>
   </div>
   <div class="col s6 left card z-depth-4">
-    <div id="test"  class="center"></div>
+    <div id="ph-graph"  class="center"></div>
   </div>
 </div>
 
@@ -112,31 +112,3 @@
    <% end %>
  </div>
  <br><br>
-
- <script type="text/javascript">
- $(function () {
-  var myChart = Highcharts.chart('test', {
-      chart: {
-          type: 'line'
-      },
-      title: {
-          text: 'Water Parameters'
-      },
-      xAxis: {
-          categories: ['Apples', 'Bananas', 'Oranges']
-      },
-      yAxis: {
-          title: {
-              text: 'Measurement'
-          }
-      },
-      series: [{
-          name: 'pH',
-          data: [1, 0, 4]
-      }, {
-          name: 'Ammonia',
-          data: [5, 7, 30]
-      }]
-  });
-});
- </script>
