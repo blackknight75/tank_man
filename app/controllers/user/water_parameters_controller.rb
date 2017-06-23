@@ -1,6 +1,6 @@
 class User::WaterParametersController < ApplicationController
  def create
-   water = Tank.find(params[:format]).water_parameters.new(strong_params)
+   water = Tank.find(params[:tank_id]).water_parameters.new(strong_params)
    if water.save
      flash[:success] = "*** Water Parameters were added successfully! ***"
      redirect_to dashboard_path(current_user)
@@ -8,8 +8,6 @@ class User::WaterParametersController < ApplicationController
      flash[:error] = "*** All fields must be populated! ***"
    end
  end
-
-
 
  private
 

@@ -16,5 +16,11 @@ Rails.application.routes.draw do
       resources :water_parameters, only: [:create]
     end
   end
+
+  namespace :api do
+    namespace :v1 do
+      get '/tanks/:id/recent-ph', to: 'water_parameters/ph#index'
+    end
+  end
   root to: 'home#show'
 end

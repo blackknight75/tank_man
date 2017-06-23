@@ -1,9 +1,10 @@
 language: ruby
-rvm:
-  2.3.1
+rvm: 2.3.1
 services:
-  - postgresql
+- postgresql
 before_script:
 - bundle exec rake db:create db:migrate
-
 script: bundle exec rspec spec
+# deploy:
+#   api_key:
+#     secure: 1l68uXSCJpJkjb0TWNXtruqgc8T6IlsUBf6H8S8dvFT/Cc1nJTyO/TPV2xAySY8XuaVrN1vvaA6Cc0KuOpb2yTxHFMJ4XuZgnYbgd4ftLwVadL46Uqahmyy0h5fmi59mGWBSLuJjKkk+VfQA2xfcoc0X1FiCZJqOsai2WutxkpcqqSIJnPWXJjijFiCSkrKYowgmFZaktZg/Md+SbcrktrXraNKcl52YiweviJEUOIL6PuD1eVmlkMSQGc9/Cnr+5TPQgoSNG6D6eahRmImvrRQRNGiKMb8w51d1pPTNi7Z6n0TbM8esl624iwZ3qAu4RODG8Dbt4j8guHM62kdn29hl9U4oiXGbiE70yl1QhY8teeIcfsAAdts9KNSHg+xXtWU2yqPm6bF08sLu+uv+hr7h8xsNOZH6RIMjgpD29Rp/jtmBS0TMWBg8X+Sf9UeZ4vfPl7+bIPVHMJoGD4lWWBDq2UpGIAxYw/1HAVeJWnWvKPtm9MD2VjjJ+I99iNbNsv+/ZeWgEFVPJJqx+BZ7gPZ4MoDrbKxY2t/rkCOSqwHB3qBjLTGEuQ4DCvII2J5yPed2HjZ3df5/A3NGSU5ZMMFCYcKN5gPFkr/OLK4OYN3CZEAcG+znA6oNT02FQ0pF2fdTBRemUmeuVOfg6Aphx7qKcaDd5r31CJuvIsbhQ3I=

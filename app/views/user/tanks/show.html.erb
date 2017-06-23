@@ -1,15 +1,18 @@
 
-<%= @tank.name %>
+<h3><%= @tank.name %></h3>
 <%= @tank.size %>
 <%= @tank.style %>
 <div class="row">
+  <div class="col s12">
+    <div class="col s12 left card z-depth-4">
+      <div id="ph-graph"  class="center"></div>
+    </div>
+  </div>
   <div class="col s6 right">
     <div class="grey darken-3 card large" style="border-radius: 20px">
       <div class="card-content z-depth-3">
         <%= render "/search/graph_box.html.erb" %>
       </div>
     </div>
-  </div>
-  <div class="col s6 card large left grey darken-3" style="border-radius: 20px; background-image: url('https://i1.wp.com/landoffish.com/wp-content/uploads/2017/03/Nitrate-chart-2.png?fit=610%2C382'); background-size: cover">
   </div>
 </div>

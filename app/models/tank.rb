@@ -18,4 +18,10 @@ class Tank < ApplicationRecord
   def fish_count
     fish.count
   end
+
+  def get_recent_ph
+    # binding.pry
+    Ph.get_ph(self)
+    # water_parameters.limit(31)
+  end
 end
