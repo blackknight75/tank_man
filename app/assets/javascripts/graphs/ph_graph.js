@@ -1,6 +1,6 @@
 const host = "http://localhost:3000";
-const ph = []
-const date = []
+let ph = []
+let date = []
 
 function populatePhGraph(){
   $(function () {
@@ -27,6 +27,15 @@ function populatePhGraph(){
      });
   });
 }
+
+function clearPhGraph(){
+  $(".highcharts-container").remove();
+}
+function clearPhData(){
+  ph = [];
+  date = [];
+}
+
 function getPh() {
   $.ajax({
     method: "GET",
@@ -38,10 +47,12 @@ function getPh() {
 };
 
 function populatePhReadings(data){
+  clearPhData();
   data.forEach(function(reading){
     ph.push(reading.ph)
     date.push(reading.created_at)
-    populatePhGraph()
+    clearPhGraph();
+    populatePhGraph();
   })
 };
 
