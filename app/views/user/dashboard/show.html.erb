@@ -28,9 +28,10 @@
           <p class="activator blue-text">Fish Count: <%= tank.fish_count %></p>
          </div>
          <div id="tank-options" class="card-action z-depth-3 grey darken-3" style="border-radius: 20px;">
-           <%= link_to "Tank Details", user_tank_path(tank), class: "waves-effect grey darken-4 orange-text btn", style: "border-radius: 20px"%>
-           <%= link_to "Enter Parameters", user_tank_water_parameters_path(tank), class: "waves-effect grey darken-4 orange-text btn", style: "border-radius: 20px", href: "#modal3" %>
-           <button class="waves-effect grey darken-4 orange-text btn z-depth-3 left" style="border-radius: 20px; 20px; width: 175px;" data-target="modal2">Add a Fish</button>
+           <%= link_to "Details", user_tank_path(tank), class: "waves-effect grey darken-4 orange-text btn", style: "border-radius: 20px"%>
+           <%= link_to "New Params", user_tank_water_parameters_path(tank), class: "waves-effect grey darken-4 orange-text btn", style: "border-radius: 20px", href: "#modal3" %>
+           <%= link_to "Add Fish", "", class: "waves-effect grey darken-4 orange-text btn", style: "border-radius: 20px", href: "#modal2" %>
+           <!-- <button class="waves-effect grey darken-4 orange-text btn z-depth-3 left" style="border-radius: 20px; 20px; width: 175px;" data-target="modal2">Add a Fish</button> -->
            <%#= link_to "Add a Fish", "", class: "waves-effect grey darken-4 orange-text btn", style: "border-radius: 20px", href: "#modal2"%>
 
          </div>

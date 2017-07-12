@@ -1,18 +1,58 @@
+<div class="row center">
+  <img class="materialboxed" width="60%" src="<%= @tank.image_url %>" style="border-radius: 20px; 20px; z-depth-3; border: 10px double black;">
+</div>
+  <h3 class="white-text"><%= @tank.name %></h3>
+  <h5 class="white-text"><%= @tank.size %> Gallons</h5>
+  <h5 class="white-text"><%= @tank.style %></h5>
 
-<h3><%= @tank.name %></h3>
-<%= @tank.size %>
-<%= @tank.style %>
+<br><br>
+
+<div class="row">
+  <div id="button-group" class="col s12">
+    <a id="ph-button" class="waves-effect grey darken-4 orange-text btn z-depth-3" style="border-radius: 20px; 20px; width: 175px;" onclick="getPh()">Ph</a>
+    <a class="waves-effect grey darken-4 orange-text btn z-depth-3" style="border-radius: 20px; 20px; width: 175px;">Ammonia</a>
+    <a class="waves-effect grey darken-4 orange-text btn z-depth-3" style="border-radius: 20px; 20px; width: 175px;">Nitrates</a>
+    <a class="waves-effect grey darken-4 orange-text btn z-depth-3" style="border-radius: 20px; 20px; width: 175px;">Temperature</a>
+  </div>
+</div>
+
 <div class="row">
   <div class="col s12">
-    <div class="col s12 left card z-depth-4">
+    <div class="center z-depth-4">
       <div id="ph-graph"  class="center"></div>
     </div>
   </div>
-  <div class="col s6 right">
-    <div class="grey darken-3 card large" style="border-radius: 20px">
-      <div class="card-content z-depth-3">
-        <%= render "/search/graph_box.html.erb" %>
+</div>
+
+<h4 class="white-text">Tankmates</h4>
+<div class="row">
+  <% @tank.fish.each do |fish| %>
+    <div class="col s4 m4">
+      <div class="card z-depth-3" style="border-radius: 20px; 20px;">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator" src="<%= fish.image_url %>" style="width: 100%; height: 250px; border-radius: 20px;">
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4"><%= fish.name %><i class="material-icons right">more_vert</i></span>
+          <p>Breed: <%= fish.breed %> </p>
+          <p>Temperament: <%= fish.temperament %> </p>
+
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+          <p>Description: <%= fish.description %></p>
+        </div>
+        <div class="card-action" style="border-radius: 20px; 20px;">
+          <%= link_to "Delete Fish", user_tank_fish_path(@tank.id, fish.id), method: :delete %>
+          <%= link_to "Move Fish", "", method: :put %>
+        </div>
       </div>
     </div>
-  </div>
+  <% end %>
 </div>
+
+<!-- <script type="text/javascript">
+$( document ).ready(function() {
+    getPh();
+});
+</script> -->

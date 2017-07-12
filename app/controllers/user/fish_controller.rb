@@ -10,6 +10,12 @@ class User::FishController < ApplicationController
     end
   end
 
+  def destroy
+    fish = Fish.find(params[:id])
+    fish.destroy
+    redirect_to request.referer
+  end
+
   private
 
   def fish_params

@@ -45,4 +45,4 @@ function populatePhReadings(data){
   })
 };
 
-  getPh()
+  // getPh()
