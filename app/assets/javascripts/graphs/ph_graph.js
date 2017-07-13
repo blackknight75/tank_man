@@ -1,10 +1,10 @@
-const host = "http://localhost:3000";
+let host = "http://localhost:3000";
 let ph = []
 let date = []
 
 function populatePhGraph(){
   $(function () {
-     Highcharts.chart('ph-graph', {
+     Highcharts.chart('graph', {
        chart: {
            type: 'area'
        },
@@ -29,7 +29,7 @@ function populatePhGraph(){
 }
 
 function clearPhGraph(){
-  $("#ph-graph").empty();
+  $("#graph").empty();
 }
 
 function clearPhData(){

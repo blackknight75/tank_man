@@ -20,8 +20,10 @@ class Tank < ApplicationRecord
   end
 
   def get_recent_ph
-    # binding.pry
     Ph.get_ph(self)
-    # water_parameters.limit(31)
+  end
+
+  def get_recent_ammonia
+    Ammonia.get_ammonia(self)
   end
 end
