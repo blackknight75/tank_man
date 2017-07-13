@@ -116,3 +116,27 @@ input:not([type]), input[type=text], input[type=password], input[type=email], in
     font-size: 16px;
     color: #0072BC;
 }
+
+.highcharts-background {
+	fill: #2B292E;
+	stroke: #a4edba;
+	stroke-width: 2px;
+}
+
+.highcharts-root text {
+  fill: #eee;
+  stroke: #eee;
+  stroke-width: 1px;
+}
+
+.highcharts-area {
+    fill-opacity: 0.75;
+    stroke-width: 0;
+    fill: #90ed7d;
+}
+
+.highcharts-tooltip-box {
+  stroke-width: 1px;
+  fill: #2B292E;
+  fill-opacity: 0.85;
+}

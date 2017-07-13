@@ -3,12 +3,17 @@
     <img class="materialboxed" width="100%" src="<%= @tank.image_url %>" style="border-radius: 20px; 20px; z-depth-3; border: 10px double black;">
   </div>
   <div class="col s3 left">
-    <h3 class="white-text"><%= @tank.name %></h3>
-    <h5 class="white-text"><%= @tank.size %> Gallons</h5>
-    <h5 class="white-text"><%= @tank.style %></h5>
-<br><br>
-    <a class="waves-effect grey darken-4 orange-text btn z-depth-3" style="border-radius: 20px; 20px; width: 175px;">Add Fish</a>
-    <a class="waves-effect grey darken-4 orange-text btn z-depth-3" style="border-radius: 20px; 20px; width: 175px;">Add Params</a>
+    <div class="card large z-depth-3" style=" background-color:rgba(0, 0, 0, 0.5); border-radius: 20px; 20px;">
+      <br><br>
+      <h3 class="white-text center"><%= @tank.name %></h3>
+      <h5 class="white-text center"><%= @tank.size %> Gallons</h5>
+      <h5 class="white-text center"><%= @tank.style %></h5>
+      <br><br>
+      <div class="center">
+        <a class="waves-effect grey darken-4 orange-text btn z-depth-3" style="border-radius: 20px; 20px; width: 175px;">Add Fish</a>
+        <a class="waves-effect grey darken-4 orange-text btn z-depth-3" style="border-radius: 20px; 20px; width: 175px;">Add Params</a>
+      </div>
+    </div>
   </div>
 </div>
 

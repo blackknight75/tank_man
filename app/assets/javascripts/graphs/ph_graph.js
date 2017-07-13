@@ -6,10 +6,10 @@ function populatePhGraph(){
   $(function () {
      Highcharts.chart('ph-graph', {
        chart: {
-           type: 'line'
+           type: 'area'
        },
        title: {
-           text: 'Water Parameters'
+           text: 'pH Readings'
        },
        xAxis: {
            categories: date
@@ -56,5 +56,3 @@ function populatePhReadings(data){
     populatePhGraph();
   })
 };
-
-  // getPh()
