@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170420004315) do
+ActiveRecord::Schema.define(version: 20170713010619) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,14 @@ ActiveRecord::Schema.define(version: 20170420004315) do
     t.string  "description"
     t.integer "tank_id"
     t.index ["tank_id"], name: "index_fish_on_tank_id", using: :btree
+  end
+
+  create_table "notes", force: :cascade do |t|
+    t.string   "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "fish_id"
+    t.index ["fish_id"], name: "index_notes_on_fish_id", using: :btree
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -67,6 +75,7 @@ ActiveRecord::Schema.define(version: 20170420004315) do
   end
 
   add_foreign_key "fish", "tanks"
+  add_foreign_key "notes", "fish"
   add_foreign_key "reviews", "users"
   add_foreign_key "tanks", "users"
   add_foreign_key "water_parameters", "tanks"

@@ -1,9 +1,16 @@
-<div class="row center">
-  <img class="materialboxed" width="60%" src="<%= @tank.image_url %>" style="border-radius: 20px; 20px; z-depth-3; border: 10px double black;">
+<div class="row">
+  <div class="col s9 right">
+    <img class="materialboxed" width="100%" src="<%= @tank.image_url %>" style="border-radius: 20px; 20px; z-depth-3; border: 10px double black;">
+  </div>
+  <div class="col s3 left">
+    <h3 class="white-text"><%= @tank.name %></h3>
+    <h5 class="white-text"><%= @tank.size %> Gallons</h5>
+    <h5 class="white-text"><%= @tank.style %></h5>
+<br><br>
+    <a class="waves-effect grey darken-4 orange-text btn z-depth-3" style="border-radius: 20px; 20px; width: 175px;">Add Fish</a>
+    <a class="waves-effect grey darken-4 orange-text btn z-depth-3" style="border-radius: 20px; 20px; width: 175px;">Add Params</a>
+  </div>
 </div>
-  <h3 class="white-text"><%= @tank.name %></h3>
-  <h5 class="white-text"><%= @tank.size %> Gallons</h5>
-  <h5 class="white-text"><%= @tank.style %></h5>
 
 <br><br>
 
@@ -37,8 +44,20 @@
           <p>Temperament: <%= fish.temperament %> </p>
         </div>
         <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+          <span class="card-title grey-text text-darken-4">Fish Info<i class="material-icons right">close</i></span>
+          <p class="grey-text">Scroll down for more information</p>
           <p>Description: <%= fish.description %></p>
+          <form action="/fish/<%= fish.id %>/notes" method="post">
+            <input type="text" name="note" placeholder="Type Note Here"><br>
+            <input type="hidden" name="" value="<%= fish.id %>">
+            <input type="submit" value="Add Note">
+          </form>
+          <br><br>
+          <% fish.notes.each do |note| %>
+            <%= note.created_at.strftime("%D") %><br>
+            <%= note.body %>
+            <br><br>
+          <% end %>
         </div>
         <div class="card-action" style="border-radius: 20px; 20px;">
           <%= link_to "Delete Fish", user_tank_fish_path(@tank.id, fish.id), method: :delete %>

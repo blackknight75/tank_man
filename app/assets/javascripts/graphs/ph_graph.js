@@ -29,8 +29,9 @@ function populatePhGraph(){
 }
 
 function clearPhGraph(){
-  $(".highcharts-container").remove();
+  $("#ph-graph").empty();
 }
+
 function clearPhData(){
   ph = [];
   date = [];
