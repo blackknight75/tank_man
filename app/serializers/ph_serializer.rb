@@ -1,3 +1,3 @@
 class PhSerializer < ActiveModel::Serializer
-  attributes :ph, :created_at
+  attributes :ph, :tank_id, :created_at
 end

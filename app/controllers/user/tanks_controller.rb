@@ -1,8 +1,7 @@
 class User::TanksController < ApplicationController
 
-
   def show
-    @tank = Tank.find_by(params[:tank_id])
+    @tank = Tank.find(params[:id])
   end
 
   def create
