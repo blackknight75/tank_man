@@ -117,7 +117,7 @@ input:not([type]), input[type=text], input[type=password], input[type=email], in
     color: #0072BC;
 }
 
-.highcharts-background {
+/*.highcharts-background {
 	fill: #2B292E;
 	stroke: #a4edba;
 	stroke-width: 2px;
@@ -139,4 +139,4 @@ input:not([type]), input[type=text], input[type=password], input[type=email], in
   stroke-width: 1px;
   fill: #2B292E;
   fill-opacity: 0.85;
-}
+}*/

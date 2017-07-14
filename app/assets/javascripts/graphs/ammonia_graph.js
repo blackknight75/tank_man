@@ -1,4 +1,3 @@
-// let host = "http://localhost:3000";
 let ammonia = []
 let ammoniaDate = []
 
@@ -18,7 +17,6 @@ function populateAmmoniaGraph(){
            title: {
                text: 'Measurement'
            }
-
        },
        series: [{
            name: 'Ammonia',

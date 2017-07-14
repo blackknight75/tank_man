@@ -23,6 +23,8 @@ Rails.application.routes.draw do
     namespace :v1 do
       get '/tanks/:id/recent-ph', to: 'water_parameters/ph#index'
       get '/tanks/:id/recent-ammonia', to: 'water_parameters/ammonia#index'
+      get '/tanks/:id/recent-nitrates', to: 'water_parameters/nitrates#index'
+      get '/tanks/:id/recent-temperature', to: 'water_parameters/temperature#index'
     end
   end
   root to: 'home#show'

@@ -26,4 +26,8 @@ class Tank < ApplicationRecord
   def get_recent_ammonia
     Ammonia.get_ammonia(self)
   end
+
+  def get_recent_nitrates
+    Nitrate.get_nitrates(self)
+  end
 end

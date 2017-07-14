@@ -38,9 +38,10 @@ function clearPhData(){
 }
 
 function getPh() {
+  var tankId = $('#graph').data('tank')
   $.ajax({
     method: "GET",
-    url: `${host}/api/v1/tanks/1/recent-ph?tank_id=1`,
+    url: `${host}/api/v1/tanks/${tankId}/recent-ph?tank_id=${tankId}`,
     success:  function(data){
       populatePhReadings(data)
     }
