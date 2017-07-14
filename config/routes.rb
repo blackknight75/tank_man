@@ -6,10 +6,12 @@ Rails.application.routes.draw do
   get '/dashboard/:id', to: 'user/dashboard#show', as: "dashboard"
   get '/near_by_stores', to: 'store_search#index', as: "store_search"
   get 'user/:id/profile', to: 'user/profile#show', as: "user_profile"
-  post 'fish/:fish_id/notes', to: 'user/notes#create', as: "new_fish_note" 
+  post 'fish/:fish_id/notes', to: 'user/notes#create', as: "new_fish_note"
+
   resources :reviews
   resources :stores, only: [:index, :show]
   resources :sessions, only: [:create, :destroy]
+
   namespace :user do
     resources :tanks do
       resources :fish
@@ -20,6 +22,9 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       get '/tanks/:id/recent-ph', to: 'water_parameters/ph#index'
+      get '/tanks/:id/recent-ammonia', to: 'water_parameters/ammonia#index'
+      get '/tanks/:id/recent-nitrates', to: 'water_parameters/nitrates#index'
+      get '/tanks/:id/recent-temperature', to: 'water_parameters/temperature#index'
     end
   end
   root to: 'home#show'

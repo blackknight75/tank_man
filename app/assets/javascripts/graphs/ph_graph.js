@@ -1,10 +1,10 @@
-const host = "http://localhost:3000";
+let host = "http://localhost:3000";
 let ph = []
 let date = []
 
 function populatePhGraph(){
   $(function () {
-     Highcharts.chart('ph-graph', {
+     Highcharts.chart('graph', {
        chart: {
            type: 'area'
        },
@@ -29,7 +29,7 @@ function populatePhGraph(){
 }
 
 function clearPhGraph(){
-  $("#ph-graph").empty();
+  $("#graph").empty();
 }
 
 function clearPhData(){
@@ -38,9 +38,10 @@ function clearPhData(){
 }
 
 function getPh() {
+  var tankId = $('#graph').data('tank')
   $.ajax({
     method: "GET",
-    url: `${host}/api/v1/tanks/1/recent-ph?tank_id=1`,
+    url: `${host}/api/v1/tanks/${tankId}/recent-ph?tank_id=${tankId}`,
     success:  function(data){
       populatePhReadings(data)
     }
